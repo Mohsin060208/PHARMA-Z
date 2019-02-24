@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E105B8F1-8E3D-46C4-B24E-33C95D369D56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PHARMA_Z</RootNamespace>
+    <AssemblyName>PHARMA-Z</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Animator, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Animator.1.0.3\lib\net20\Animator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\..\softwares\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Disclaimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Disclaimer.Designer.cs">
+      <DependentUpon>Disclaimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Disclaimer.resx">
+      <DependentUpon>Disclaimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About_logo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About_logo_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About_small_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About_small_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disclaimer_logo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disclaimer_logo_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disclaimer_small_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disclaimer_small_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favorites_logo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favorites_logo_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favorites_small_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favorites_small_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feedback_logo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feedback_logo_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feedback_small_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feedback_small_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fever.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\headache.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_title_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaximizedState_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaximizedState_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NormalState_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NormalState_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\On.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recent_logo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recent_logo_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recent_small_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recent_small_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_logo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_logo_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_small_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_small_light.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
