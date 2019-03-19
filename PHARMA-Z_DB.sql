@@ -11,7 +11,7 @@ Target Server Type    : SQL Server
 Target Server Version : 110000
 File Encoding         : 65001
 
-Date: 2019-02-24 17:38:35
+Date: 2019-03-13 22:47:26
 */
 
 
@@ -106,7 +106,8 @@ CREATE TABLE [dbo].[Dosages] (
 [Id] int NOT NULL IDENTITY(1,1) ,
 [Adult] varchar(50) NOT NULL ,
 [Neonatal] varchar(50) NOT NULL ,
-[Paedriatic] varchar(50) NOT NULL 
+[Paedriatic] varchar(50) NOT NULL ,
+[GenericId] int NOT NULL 
 )
 
 
@@ -171,7 +172,6 @@ CREATE TABLE [dbo].[Generic] (
 [Indications] varchar(50) NOT NULL ,
 [Contraindications] varchar(50) NOT NULL ,
 [Warnings] varchar(50) NOT NULL ,
-[DosagesId] int NOT NULL ,
 [Side_Effects] varchar(50) NOT NULL ,
 [High_Risk_Groups] varchar(50) NOT NULL ,
 [IsFavorited] binary(1) NULL 
@@ -299,6 +299,10 @@ GO
 -- ----------------------------
 -- Indexes structure for table Dosages
 -- ----------------------------
+CREATE UNIQUE INDEX [IX_DOSAGES_GENERIC] ON [dbo].[Dosages]
+([GenericId] ASC) 
+WITH (IGNORE_DUP_KEY = ON)
+GO
 
 -- ----------------------------
 -- Primary Key structure for table Dosages
@@ -319,9 +323,6 @@ GO
 -- ----------------------------
 -- Indexes structure for table Generic
 -- ----------------------------
-CREATE INDEX [IX_DOSAGES] ON [dbo].[Generic]
-([DosagesId] ASC) 
-GO
 
 -- ----------------------------
 -- Primary Key structure for table Generic
@@ -340,7 +341,7 @@ ALTER TABLE [dbo].[Brand] ADD FOREIGN KEY ([GenericId]) REFERENCES [dbo].[Generi
 GO
 
 -- ----------------------------
--- Foreign Key structure for table [dbo].[Generic]
+-- Foreign Key structure for table [dbo].[Dosages]
 -- ----------------------------
-ALTER TABLE [dbo].[Generic] ADD FOREIGN KEY ([DosagesId]) REFERENCES [dbo].[Dosages] ([Id]) ON DELETE NO ACTION ON UPDATE CASCADE
+ALTER TABLE [dbo].[Dosages] ADD FOREIGN KEY ([GenericId]) REFERENCES [dbo].[Generic] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
 GO
