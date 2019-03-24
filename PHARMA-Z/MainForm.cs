@@ -1217,6 +1217,7 @@ namespace PHARMA_Z
             Back_btn.Visible = true;
             Search_desc.Visible = false;
             FeedbackDesc.Visible = false;
+            HomeDesc.Visible = false;
         }
         private void Back_btn_Click(object sender, EventArgs e)
         {
@@ -1225,6 +1226,7 @@ namespace PHARMA_Z
                 HeadacheDesc.Visible = false;
                 Search_desc.Visible = true;
                 Back_btn.Visible = false;
+                HomeDesc.Visible = false;
         }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {

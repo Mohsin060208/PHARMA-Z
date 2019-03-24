@@ -118,34 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>The Information provided in this desktop application (PHARMA-Z) is neither intended nor implied to substitute professional medical advice, and is provided for educational purpose only, without any guarantee of accuracy. You should not use the information in this application or the information 
-linked,to diagnose or treat a health problem without consulting with a qualified healthcare 
-professional. If you undertake any treatment methods displayed in this application without a 
-medical professional's supervision,solely you and entirely you will be resposible for the outcomes. 
-Neither PHARMA-Z nor anyone related to this application can be held responsible for your action 
-or any condition resulting thereof.
-
-</value>
+    <value>           The Information provided in this desktop application(PHARMA-Z) is neither intended nor implied to subtitute professional medical advice,and is provided for educational purpose only,without any gauranty of accuracy.
+If you undertake any treatment methods displayed in this application without a medical professional's supervision,solely you and entirely you will be resposible for the outcomes.
+     Neither PHARMA-Z nor anyone related to this application can be held responsible for your action or any condition resultiong thereof.</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Next.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFMAAAAnCAYAAABzAXTXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7dqtjsJgEIXhCggEyk/AkJDUIpAYgiJBEa4C
-        QfAILgKDq6tD4noFdTgkDtfrmM1ps+w2DNBuZlWPeBQf3fCG9mOndeI4FrLBmIYY0xBjGmJMQ4xp6G3M
-        +/0uvu/LYrGQ8XgsvV5PHMcpFXxmfPbZbCbH41Fut5vaCl7GPJ1O0u12xXVd9Y+UUbPZlHa7LYfDQW32
-        FBPll8tl8ibtgOQkbSaTiVyv10y7TEyEHA6HUqlU1INQFlpdLhc9Jr6RDFkMrqdPMXGN5KldXKPRkN1u
-        9xMTuzY2G20xfYZ2URSlMbHlY6fSFtJnuDRuNps0Jn5DaYsoP8/z0piDwUBdQPklGzdi1ut1dQEVhJjq
-        C1QcYxpiTEOMaYgxDTGmIcTkcMMIYpZxgv4vEBODTvVFyi35LxIx9/u91Go1dRHls1qt0piYFnc6HXUR
-        fdZqtSQIgjQmbLdbjuH+oFqtynw+z07aMSAejUbqG+i1fr//uP37iAmYFnNnzw8T9vP5/OiXiQlhGCZ3
-        3bghvYZTG9/I3yHhKSbglF+v17zBpsBDGdPpVH2yQ435DeWx5WO30g5cJhig4zEhPC6ktYK3MakYxjTE
-        mIYY0xBjmonlC9+RiQznEHrPAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>301, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
-  </metadata>
 </root>
