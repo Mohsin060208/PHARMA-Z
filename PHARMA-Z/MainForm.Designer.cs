@@ -29,28 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Use");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Precaution");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Possible Side Effects");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Aspirin", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Acetaminophen");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Fenoprofen");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Flurbiprofen");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Ibuprofen");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Ketoprofen");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Nabumetone");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Naproxen");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Diclofenac");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Ketorolac");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Meclofenate");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Carisoprodol");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Orphenadrine citrate");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Methocarbamol");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Cyclobenzaprine HCL");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Metaxalone");
             AnimatorNS.Animation animation3 = new AnimatorNS.Animation();
             AnimatorNS.Animation animation2 = new AnimatorNS.Animation();
             AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
@@ -97,13 +75,7 @@
             this.Body = new System.Windows.Forms.Panel();
             this.Feedback_Panel = new System.Windows.Forms.Panel();
             this.Search_Panel = new System.Windows.Forms.Panel();
-            this.Headache_panel = new System.Windows.Forms.Panel();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.GenericTab = new MetroFramework.Controls.MetroTabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.Brand_tab = new MetroFramework.Controls.MetroTabPage();
+            this.SearchResult = new System.Windows.Forms.DataGridView();
             this.Search_tb = new System.Windows.Forms.TextBox();
             this.Generic = new System.Windows.Forms.RadioButton();
             this.Brand = new System.Windows.Forms.RadioButton();
@@ -160,10 +132,7 @@
             this.Body.SuspendLayout();
             this.Feedback_Panel.SuspendLayout();
             this.Search_Panel.SuspendLayout();
-            this.Headache_panel.SuspendLayout();
-            this.metroTabControl1.SuspendLayout();
-            this.GenericTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.Bottom_Panel.SuspendLayout();
             this.DateTime_Panel.SuspendLayout();
@@ -1109,7 +1078,7 @@
             // 
             // Search_Panel
             // 
-            this.Search_Panel.Controls.Add(this.Headache_panel);
+            this.Search_Panel.Controls.Add(this.SearchResult);
             this.Search_Panel.Controls.Add(this.Search_tb);
             this.Search_Panel.Controls.Add(this.Generic);
             this.Search_Panel.Controls.Add(this.Brand);
@@ -1129,186 +1098,19 @@
             this.Search_Panel.TabIndex = 84;
             this.Search_Panel.Visible = false;
             // 
-            // Headache_panel
+            // SearchResult
             // 
-            this.Headache_panel.Controls.Add(this.metroTabControl1);
-            this.PanelAnimator.SetDecoration(this.Headache_panel, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.Headache_panel, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.Headache_panel, AnimatorNS.DecorationType.None);
-            this.Headache_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Headache_panel.Location = new System.Drawing.Point(0, 0);
-            this.Headache_panel.Name = "Headache_panel";
-            this.Headache_panel.Size = new System.Drawing.Size(988, 513);
-            this.Headache_panel.TabIndex = 79;
-            this.Headache_panel.Visible = false;
-            // 
-            // metroTabControl1
-            // 
-            this.metroTabControl1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.metroTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroTabControl1.Controls.Add(this.GenericTab);
-            this.metroTabControl1.Controls.Add(this.Brand_tab);
-            this.SidebarTitleAnimator.SetDecoration(this.metroTabControl1, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.metroTabControl1, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.metroTabControl1, AnimatorNS.DecorationType.None);
-            this.metroTabControl1.Location = new System.Drawing.Point(56, 6);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(920, 448);
-            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTabControl1.TabIndex = 1;
-            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // GenericTab
-            // 
-            this.GenericTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.GenericTab.Controls.Add(this.button1);
-            this.GenericTab.Controls.Add(this.dataGridView1);
-            this.GenericTab.Controls.Add(this.treeView1);
-            this.GenericTab.CustomBackground = true;
-            this.PanelAnimator.SetDecoration(this.GenericTab, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.GenericTab, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.GenericTab, AnimatorNS.DecorationType.None);
-            this.GenericTab.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenericTab.HorizontalScrollbarBarColor = true;
-            this.GenericTab.Location = new System.Drawing.Point(4, 35);
-            this.GenericTab.Name = "GenericTab";
-            this.GenericTab.Size = new System.Drawing.Size(912, 409);
-            this.GenericTab.Style = MetroFramework.MetroColorStyle.Blue;
-            this.GenericTab.TabIndex = 0;
-            this.GenericTab.Tag = "Generic_tab";
-            this.GenericTab.Text = "Generic Medicines";
-            this.GenericTab.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.GenericTab.VerticalScrollbarBarColor = true;
-            // 
-            // button1
-            // 
-            this.Menu_Expand_Animator.SetDecoration(this.button1, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.button1, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.button1, AnimatorNS.DecorationType.None);
-            this.button1.Location = new System.Drawing.Point(437, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(240, 45);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SidebarTitleAnimator.SetDecoration(this.dataGridView1, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.dataGridView1, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.dataGridView1, AnimatorNS.DecorationType.None);
-            this.dataGridView1.Location = new System.Drawing.Point(258, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(609, 283);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.Menu_Expand_Animator.SetDecoration(this.treeView1, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.treeView1, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.treeView1, AnimatorNS.DecorationType.None);
-            this.treeView1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.Location = new System.Drawing.Point(12, 18);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Use";
-            treeNode1.Tag = "Use";
-            treeNode1.Text = "Use";
-            treeNode2.Name = "Precaution";
-            treeNode2.Tag = "Precaution";
-            treeNode2.Text = "Precaution";
-            treeNode3.Name = "Possible Side Effects";
-            treeNode3.Tag = "Possible Side Effects";
-            treeNode3.Text = "Possible Side Effects";
-            treeNode4.Name = "Aspirin";
-            treeNode4.Tag = "Aspirin";
-            treeNode4.Text = "Aspirin";
-            treeNode5.Name = "Acetaminophen";
-            treeNode5.Tag = "Acetaminophen";
-            treeNode5.Text = "Acetaminophen";
-            treeNode6.Name = "Fenoprofen";
-            treeNode6.Tag = "Fenoprofen";
-            treeNode6.Text = "Fenoprofen";
-            treeNode7.Name = "Flurbiprofen";
-            treeNode7.Tag = "Flurbiprofen";
-            treeNode7.Text = "Flurbiprofen";
-            treeNode8.Name = "Ibuprofen";
-            treeNode8.Tag = "Ibuprofen";
-            treeNode8.Text = "Ibuprofen";
-            treeNode9.Name = "Ketoprofen";
-            treeNode9.Tag = "Ketoprofen";
-            treeNode9.Text = "Ketoprofen";
-            treeNode10.Name = "Nabumetone";
-            treeNode10.Tag = "Nabumetone";
-            treeNode10.Text = "Nabumetone";
-            treeNode11.Name = "Naproxen";
-            treeNode11.Tag = "Naproxen";
-            treeNode11.Text = "Naproxen";
-            treeNode12.Name = "Diclofenac";
-            treeNode12.Tag = "Diclofenac";
-            treeNode12.Text = "Diclofenac";
-            treeNode13.Name = "Ketorolac";
-            treeNode13.Tag = "Ketorolac";
-            treeNode13.Text = "Ketorolac";
-            treeNode14.Name = "Meclofenate";
-            treeNode14.Tag = "Meclofenate";
-            treeNode14.Text = "Meclofenate";
-            treeNode15.Name = "Carisoprodol";
-            treeNode15.Tag = "Carisoprodol";
-            treeNode15.Text = "Carisoprodol";
-            treeNode16.Name = "Orphenadrine citrate";
-            treeNode16.Tag = "Orphenadrine citrate";
-            treeNode16.Text = "Orphenadrine citrate";
-            treeNode17.Name = "Methocarbamol";
-            treeNode17.Tag = "Methocarbamol";
-            treeNode17.Text = "Methocarbamol";
-            treeNode18.Name = "Cyclobenzaprine HCL";
-            treeNode18.Tag = "Cyclobenzaprine HCL";
-            treeNode18.Text = "Cyclobenzaprine HCL";
-            treeNode19.Name = "Metaxalone";
-            treeNode19.Tag = "Metaxalone";
-            treeNode19.Text = "Metaxalone";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18,
-            treeNode19});
-            this.treeView1.Size = new System.Drawing.Size(888, 378);
-            this.treeView1.TabIndex = 0;
-            // 
-            // Brand_tab
-            // 
-            this.PanelAnimator.SetDecoration(this.Brand_tab, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.Brand_tab, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.Brand_tab, AnimatorNS.DecorationType.None);
-            this.Brand_tab.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Brand_tab.HorizontalScrollbarBarColor = true;
-            this.Brand_tab.Location = new System.Drawing.Point(4, 35);
-            this.Brand_tab.Name = "Brand_tab";
-            this.Brand_tab.Size = new System.Drawing.Size(912, 409);
-            this.Brand_tab.TabIndex = 1;
-            this.Brand_tab.Text = "Brand Medicines";
-            this.Brand_tab.VerticalScrollbarBarColor = true;
+            this.SearchResult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.SearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SidebarTitleAnimator.SetDecoration(this.SearchResult, AnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.SearchResult, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.SearchResult, AnimatorNS.DecorationType.None);
+            this.SearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SearchResult.Location = new System.Drawing.Point(0, 0);
+            this.SearchResult.Name = "SearchResult";
+            this.SearchResult.Size = new System.Drawing.Size(988, 513);
+            this.SearchResult.TabIndex = 79;
+            this.SearchResult.Visible = false;
             // 
             // Search_tb
             // 
@@ -1836,7 +1638,7 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // PanelAnimator
             // 
@@ -1976,10 +1778,7 @@
             this.Feedback_Panel.PerformLayout();
             this.Search_Panel.ResumeLayout(false);
             this.Search_Panel.PerformLayout();
-            this.Headache_panel.ResumeLayout(false);
-            this.metroTabControl1.ResumeLayout(false);
-            this.GenericTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.Bottom_Panel.ResumeLayout(false);
             this.DateTime_Panel.ResumeLayout(false);
@@ -2059,11 +1858,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton Back_btn;
         private System.Windows.Forms.Label Headache_Label;
         private System.Windows.Forms.Panel Search_Panel;
-        private System.Windows.Forms.Panel Headache_panel;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroTabPage GenericTab;
-        private System.Windows.Forms.TreeView treeView1;
-        private MetroFramework.Controls.MetroTabPage Brand_tab;
         private System.Windows.Forms.TextBox Search_tb;
         private System.Windows.Forms.RadioButton Generic;
         private System.Windows.Forms.RadioButton Brand;
@@ -2073,7 +1867,6 @@
         private Bunifu.Framework.UI.BunifuTileButton Flu;
         private Bunifu.Framework.UI.BunifuTileButton Cough;
         private Bunifu.Framework.UI.BunifuImageButton SearchBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView SearchResult;
     }
 }

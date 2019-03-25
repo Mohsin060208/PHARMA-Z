@@ -1,9 +1,9 @@
 /*
 Navicat SQL Server Data Transfer
 
-Source Server         : SQL Express Local
+Source Server         : SQLSERVER
 Source Server Version : 110000
-Source Host           : DESKTOP-4OFAUV8\SQLEXPRESS:1433
+Source Host           : DESKTOP-H4D0KNJ\SQLEXPRESS:1433
 Source Database       : PHARMA-Z
 Source Schema         : dbo
 
@@ -11,7 +11,7 @@ Target Server Type    : SQL Server
 Target Server Version : 110000
 File Encoding         : 65001
 
-Date: 2019-03-13 22:47:26
+Date: 2019-03-24 17:18:38
 */
 
 
@@ -23,9 +23,14 @@ GO
 CREATE TABLE [dbo].[Brand] (
 [Id] int NOT NULL ,
 [Name] varchar(255) NOT NULL ,
-[GenericId] int NOT NULL ,
 [CompanyId] int NOT NULL ,
-[FormId] int NOT NULL 
+[Use] varchar(255) NULL ,
+[Precautions] varchar(255) NULL ,
+[Side Effects] varchar(255) NULL ,
+[Overview] varchar(255) NULL ,
+[Meta] varchar(255) NULL ,
+[IsFavorite] bit NULL ,
+[IsRecent] bit NULL 
 )
 
 
@@ -168,22 +173,54 @@ GO
 CREATE TABLE [dbo].[Generic] (
 [Id] int NOT NULL IDENTITY(1,1) ,
 [Name] varchar(255) NOT NULL ,
-[Overview] varchar(50) NOT NULL ,
-[Indications] varchar(50) NOT NULL ,
-[Contraindications] varchar(50) NOT NULL ,
-[Warnings] varchar(50) NOT NULL ,
-[Side_Effects] varchar(50) NOT NULL ,
-[High_Risk_Groups] varchar(50) NOT NULL ,
-[IsFavorited] binary(1) NULL 
+[Overview] varchar(50) NULL ,
+[BrandId] int NULL ,
+[Gramage] varchar(255) NULL ,
+[IsRecent] bit NULL 
 )
 
 
+GO
+DBCC CHECKIDENT(N'[dbo].[Generic]', RESEED, 12)
 GO
 
 -- ----------------------------
 -- Records of Generic
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[Generic] ON
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'2', N'sulphamethoxazole , trimethoprime : 160mg', null, null, N'800mg', null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'3', N'sulphamethoxazole : 400mg , trimethoprime : 80mg', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'4', N'orphenadrine :50mg , paracetamol : 650mg', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'5', N'orphenadrine :35mg , paracetamol : 450mg', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'6', N'nimesulide : 100mg', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'7', N'aspirin : 100mg', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'8', N'PARACETAMOL : 500mg', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'9', N'ibuprofen : 200mg or 400mg 0r 600mg ', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'10', N'PARACETAMOL : 500mg', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'11', N'mefenamic Acid : 50mg/5mlx', null, null, null, null)
+GO
+GO
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'12', N'Aspirin : 300mg ,calcium carbonate : 90mg , citric acid : 30mg ', null, null, null, null)
+GO
 GO
 SET IDENTITY_INSERT [dbo].[Generic] OFF
 GO
@@ -204,7 +241,7 @@ GO
 -- ----------------------------
 -- Records of System_Configuration
 -- ----------------------------
-INSERT INTO [dbo].[System_Configuration] ([Theme_Toggle], [Disclaimer_Check]) VALUES (N'1', N'1')
+INSERT INTO [dbo].[System_Configuration] ([Theme_Toggle], [Disclaimer_Check]) VALUES (N'0', N'1')
 GO
 GO
 
@@ -213,6 +250,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[GetAllCompanies]
 GO
+
 -- Batch submitted through debugger: SQLQuery5.sql|7|0|C:\Users\Mohsin\AppData\Local\Temp\~vs8DD4.sql
 -- =============================================
 -- Author:		
@@ -231,6 +269,7 @@ BEGIN
 	SELECT * FROM Company;
 END
 
+
 GO
 
 -- ----------------------------
@@ -238,9 +277,11 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[GetInitialSystemConfiguration]
 GO
+
 CREATE PROCEDURE [dbo].[GetInitialSystemConfiguration]
 AS
 	SELECT * FROM System_Configuration;
+
 
 GO
 
@@ -249,9 +290,11 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[InitializeFeedback]
 GO
+
 CREATE PROCEDURE [dbo].[InitializeFeedback]
 AS
 	SELECT * FROM Feedback
+
 GO
 
 -- ----------------------------
@@ -259,10 +302,12 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[UpdateDisclaimerCheck]
 GO
+
 CREATE PROCEDURE [dbo].[UpdateDisclaimerCheck]
 		@DisclaimerCheck bit
 AS
 	UPDATE System_Configuration SET Disclaimer_Check = @DisclaimerCheck;
+
 GO
 
 -- ----------------------------
@@ -270,10 +315,12 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[UpdateTheme]
 GO
+
 CREATE PROCEDURE [dbo].[UpdateTheme]
 	@theme int
 AS
 	UPDATE System_Configuration SET Theme_Toggle = @theme;
+
 GO
 
 -- ----------------------------
@@ -323,6 +370,9 @@ GO
 -- ----------------------------
 -- Indexes structure for table Generic
 -- ----------------------------
+CREATE INDEX [IX_GENERIC_BRAND] ON [dbo].[Generic]
+([BrandId] ASC) 
+GO
 
 -- ----------------------------
 -- Primary Key structure for table Generic
@@ -335,13 +385,15 @@ GO
 -- ----------------------------
 ALTER TABLE [dbo].[Brand] ADD FOREIGN KEY ([CompanyId]) REFERENCES [dbo].[Company] ([Id]) ON DELETE NO ACTION ON UPDATE CASCADE
 GO
-ALTER TABLE [dbo].[Brand] ADD FOREIGN KEY ([FormId]) REFERENCES [dbo].[Forms] ([Id]) ON DELETE NO ACTION ON UPDATE NO ACTION
-GO
-ALTER TABLE [dbo].[Brand] ADD FOREIGN KEY ([GenericId]) REFERENCES [dbo].[Generic] ([Id]) ON DELETE NO ACTION ON UPDATE NO ACTION
-GO
 
 -- ----------------------------
 -- Foreign Key structure for table [dbo].[Dosages]
 -- ----------------------------
 ALTER TABLE [dbo].[Dosages] ADD FOREIGN KEY ([GenericId]) REFERENCES [dbo].[Generic] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+GO
+
+-- ----------------------------
+-- Foreign Key structure for table [dbo].[Generic]
+-- ----------------------------
+ALTER TABLE [dbo].[Generic] ADD FOREIGN KEY ([BrandId]) REFERENCES [dbo].[Brand] ([Id]) ON DELETE CASCADE ON UPDATE NO ACTION
 GO

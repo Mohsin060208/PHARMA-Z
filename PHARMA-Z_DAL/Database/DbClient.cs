@@ -48,8 +48,10 @@ namespace PHARMA_Z.DAL.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand(commandText, this._sqlConnection);
-                command.CommandType = commandType;
+                SqlCommand command = new SqlCommand(commandText, this._sqlConnection)
+                {
+                    CommandType = commandType
+                };
 
                 if (parameters != null && parameters.Count > 0)
                 {

@@ -11,19 +11,19 @@ using System.Data;
 
 namespace PHARMA_Z.DAL
 {
-    public class CompanyService
+    public class HeadacheMedicineService
     {
         private DbClient _dbClient = null;
-        public CompanyService ()
+        public HeadacheMedicineService ()
 	    {
             _dbClient = DbClient.CreateDbClient();
         }
-            public DataTable GetAllCompanies()
+            public DataTable GetHeadacheMedicines()
             {
-            SqlCommand command = this._dbClient.CreateSqlCommand("GetAllCompanies");
+            SqlCommand command = this._dbClient.CreateSqlCommand("GetAllHeadacheMedicines");
             DataTable dtCompanies = _dbClient.GetDataTable(command);
             return dtCompanies;
-	    }
+	        }
     }
 }
 

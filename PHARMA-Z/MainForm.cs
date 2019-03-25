@@ -20,12 +20,12 @@ namespace PHARMA_Z
     public partial class MainForm : Form
     {
         private SystemConfigurationService _systemConfigurationService;
-        private CompanyService _companyService;
+        private GenericService _genericService;
         public MainForm()
         {
             InitializeComponent();
             _systemConfigurationService = new SystemConfigurationService();
-            _companyService = new CompanyService();
+            _genericService = new GenericService();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -33,20 +33,20 @@ namespace PHARMA_Z
                 if(configuration.ThemeToggle.Equals(Themes.Dark)){
                 OffSwitch.Visible = false;
                 OnSwitch.Visible = true;
-                darkThemeOn();
+                DarkThemeOn();
                 }
             else
             {
                 OnSwitch.Visible = false;
                 OffSwitch.Visible = true;
-                darkThemeOff();
+                DarkThemeOff();
             }
             timer1.Start();
             Time.Text = DateTime.Now.ToLongTimeString();
             Date.Text = DateTime.Now.ToLongDateString();
             Subject.SelectedIndex = 0;
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             Time.Text = DateTime.Now.ToLongTimeString();
         }
@@ -114,9 +114,9 @@ namespace PHARMA_Z
         {
             OffSwitch.Visible = false;
             OnSwitch.Visible = true;
-            darkThemeOn();
+            DarkThemeOn();
         }
-        private void darkThemeOn()
+        private void DarkThemeOn()
             {
                _systemConfigurationService.UpdateTheme(Themes.Dark);
                 TitlePanelChangesDarkTheme();
@@ -337,7 +337,7 @@ namespace PHARMA_Z
             {
                 Feedback_Panel.Visible = true;
                 Search_Panel.Visible = false;
-                Headache_panel.Visible = false;
+                //Headache_panel.Visible = false;
                 Feedback_Panel.BackColor = Color.Black;
                 ClientName_Label.ForeColor = Color.Lavender;
                 ClientName.BorderColorMouseHover = Color.FromArgb(0,120,215);
@@ -358,7 +358,7 @@ namespace PHARMA_Z
             {
                 Feedback_Panel.Visible = true;
                 Search_Panel.Visible = true;
-                Headache_panel.Visible = false;
+                //Headache_panel.Visible = false;
                 Search_Panel.BackColor = Color.Black;
                 Search_tb.ForeColor = Color.Lavender;
                 Search_tb.BackColor = Color.Black;
@@ -398,9 +398,9 @@ namespace PHARMA_Z
         {
             OnSwitch.Visible = false;
             OffSwitch.Visible = true;
-            darkThemeOff();
+            DarkThemeOff();
         }
-        private void darkThemeOff()
+        private void DarkThemeOff()
             {
                 _systemConfigurationService.UpdateTheme(Themes.Light);
                 TitlePanelChangesLightTheme();
@@ -632,7 +632,7 @@ namespace PHARMA_Z
                 {
                     Feedback_Panel.Visible = true;
                     Search_Panel.Visible = true;
-                    Headache_panel.Visible = false;
+                    //Headache_panel.Visible = false;
                     Search_Panel.BackColor = Color.White;
                     SearchBtn.Image = Properties.Resources.Search_small_light;
                     SearchBtn.BackColor = Color.FromArgb(229,229,229);
@@ -813,7 +813,7 @@ namespace PHARMA_Z
             Feedback_Panel.Visible = true;
             Search_Panel.Visible = true;
             Search_desc.Visible = true;
-            Headache_panel.Visible = false;
+            //Headache_panel.Visible = false;
             HeadacheDesc.Visible = false;
             if (TitlePanel.BackColor == Color.Black)
             {
@@ -1086,7 +1086,7 @@ namespace PHARMA_Z
             Feedback_Indicator.Visible = true;
             HeadacheDesc.Visible = false;
             Search_Panel.Visible = false;
-            Headache_panel.Visible = false;
+            //Headache_panel.Visible = false;
             FeedbackDesc.Visible = true;
             Search_desc.Visible = false;
             Feedback_Panel.Visible = true;
@@ -1180,18 +1180,22 @@ namespace PHARMA_Z
             try
             {
                     var feedback = GlobalConfiguration.Feedback;
-                    MailMessage msg = new MailMessage();
-                    msg.From = new MailAddress(feedback.EmailFrom);
-                    msg.To.Add(new MailAddress(feedback.EmailTo));
+                MailMessage msg = new MailMessage
+                {
+                    From = new MailAddress(feedback.EmailFrom)
+                };
+                msg.To.Add(new MailAddress(feedback.EmailTo));
                     msg.Subject = ClientName.Text.Trim() + " (" + Subject.SelectedItem.ToString() + ")";
                     msg.Body = ClientName.Text.Trim() + " (" + Email_tb.Text + ") says, " + Message.Text.Trim();
-                    SmtpClient smtp = new SmtpClient();
-                    smtp.Port = 587;
-                    smtp.Host = "smtp.outlook.com";
-                    smtp.EnableSsl = true;
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential(feedback.EmailFrom,feedback.Pwd);
-                    smtp.SendAsync(msg,new object());
+                SmtpClient smtp = new SmtpClient
+                {
+                    Port = 587,
+                    Host = "smtp.outlook.com",
+                    EnableSsl = true,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(feedback.EmailFrom, feedback.Pwd)
+                };
+                smtp.SendAsync(msg,new object());
                     MessageBox.Show("We have received your feedback! 👍", "Success");
                     ClientName.ResetText();
                     Email_tb.ResetText();
@@ -1211,17 +1215,18 @@ namespace PHARMA_Z
             }
         private void Headache_Click(object sender, EventArgs e)
         {
-            Headache_panel.Visible = true;
+            //Headache_panel.Visible = true;
             Headache_Label.Visible = true;
             HeadacheDesc.Visible = true;
             Back_btn.Visible = true;
             Search_desc.Visible = false;
             FeedbackDesc.Visible = false;
             HomeDesc.Visible = false;
+
         }
         private void Back_btn_Click(object sender, EventArgs e)
         {
-                Headache_panel.Visible = false;
+                //Headache_panel.Visible = false;
                 HeadingLabel.Text = "SEARCH";
                 HeadacheDesc.Visible = false;
                 Search_desc.Visible = true;
@@ -1243,10 +1248,11 @@ namespace PHARMA_Z
             Search_tb.Text = "Search for Brand";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
-            var dtsource = _companyService.GetAllCompanies();
-            dataGridView1.DataSource = dtsource;
+            var dtsource = _genericService.GetAllGenericMedicines();
+            SearchResult.DataSource = dtsource;
+            SearchResult.Visible = true;
         }
     }
 }

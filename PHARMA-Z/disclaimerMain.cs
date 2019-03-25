@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PHARMA_Z
 {
-    public partial class disclaimerMain : Form
+    public partial class disclaimerMain : UserControl
     {
         public disclaimerMain()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
