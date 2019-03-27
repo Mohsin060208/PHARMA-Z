@@ -726,6 +726,7 @@ namespace PHARMA_Z
             Search_desc.Visible = false;
             Back_to_home.Enabled = false;
             DisclaimerPanel.Visible = false;
+
             if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
