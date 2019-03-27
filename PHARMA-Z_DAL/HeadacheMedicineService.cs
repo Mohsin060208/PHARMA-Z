@@ -21,8 +21,8 @@ namespace PHARMA_Z.DAL
             public DataTable GetHeadacheMedicines()
             {
             SqlCommand command = this._dbClient.CreateSqlCommand("GetAllHeadacheMedicines");
-            DataTable dtCompanies = _dbClient.GetDataTable(command);
-            return dtCompanies;
+            DataTable dtHeadache = _dbClient.GetDataTable(command);
+            return dtHeadache;
 	        }
     }
 }

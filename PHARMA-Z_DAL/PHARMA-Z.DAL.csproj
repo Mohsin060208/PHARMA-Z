@@ -49,6 +49,7 @@
     <Compile Include="Database\QueryCommand.cs" />
     <Compile Include="FeedbackService.cs" />
     <Compile Include="GenericService.cs" />
+    <Compile Include="HeadacheMedicineService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemConfigurationService.cs" />
   </ItemGroup>

@@ -69,12 +69,6 @@
     <Compile Include="Disclaimer.Designer.cs">
       <DependentUpon>Disclaimer.cs</DependentUpon>
     </Compile>
-    <Compile Include="disclaimerMain.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="disclaimerMain.Designer.cs">
-      <DependentUpon>disclaimerMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="GlobalConfiguration.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,9 +91,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Disclaimer.resx">
       <DependentUpon>Disclaimer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="disclaimerMain.resx">
-      <DependentUpon>disclaimerMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

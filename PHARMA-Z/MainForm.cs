@@ -21,11 +21,13 @@ namespace PHARMA_Z
     {
         private SystemConfigurationService _systemConfigurationService;
         private GenericService _genericService;
+        private HeadacheMedicineService _headacheMedicineService;
         public MainForm()
         {
             InitializeComponent();
             _systemConfigurationService = new SystemConfigurationService();
             _genericService = new GenericService();
+            _headacheMedicineService = new HeadacheMedicineService();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -175,6 +177,14 @@ namespace PHARMA_Z
                     HeadingLabel.Text = "SEARCH";
                     Search_desc.Visible = true;
                     Search_desc.ForeColor = Color.Lavender;
+                    HeadacheDesc.Visible = false;
+                    Headache_Label.Visible = false;
+                    Back_btn.Visible = false;
+                }
+                else if (Disclaimer_Indicator.Visible == true)
+                {
+                    HeadingLabel.Text = "Disclaimer";
+                    Search_desc.Visible = false;
                     HeadacheDesc.Visible = false;
                     Headache_Label.Visible = false;
                     Back_btn.Visible = false;
@@ -387,6 +397,12 @@ namespace PHARMA_Z
                 Fever.colorActive = Color.FromArgb(43, 43, 43);
                 Fever.ForeColor = Color.Lavender;
             }
+            else if (Disclaimer_Indicator.Visible == true)
+            {
+                DisclaimerPanel.BackColor = Color.Black;
+                DisclaimerPanelIcon.BackgroundImage = Properties.Resources.logo_title;
+                DisclaimerLabel.ForeColor = Color.Lavender;
+            }
         }
         private void BottomPanelChangesDarkTheme()
         {
@@ -455,6 +471,14 @@ namespace PHARMA_Z
                         Search_desc.Visible = true;
                         Search_desc.ForeColor = Color.Black;
                         HeadacheDesc.Visible = false;
+                    }
+                    else if(Disclaimer_Indicator.Visible == true)
+                    {
+                        HeadingLabel.Text = "Disclaimer";
+                        Search_desc.Visible = false;
+                        HeadacheDesc.Visible = false;
+                        Headache_Label.Visible = false;
+                        Back_btn.Visible = false;
                     }
                 }
             }
@@ -661,6 +685,12 @@ namespace PHARMA_Z
                     Fever.colorActive = Color.FromArgb(242,242,242);
                     Fever.ForeColor = Color.Black;
                 }
+                else if (Disclaimer_Indicator.Visible == true)
+                {
+                    DisclaimerPanel.BackColor = Color.White;
+                    DisclaimerPanelIcon.BackgroundImage = Properties.Resources.logo_title_light;
+                    DisclaimerLabel.ForeColor = Color.Black;
+            }
             }
         private void BottomPanelChangesLightTheme()
             {
@@ -690,11 +720,13 @@ namespace PHARMA_Z
         private void Home_Click(object sender, EventArgs e)
         {
             HeadingLabel.Text = "PHARMA-Z";
+            HomeDesc.Visible = true;
             Feedback_Panel.Visible = false;
             FeedbackDesc.Visible = false;
             Search_desc.Visible = false;
             Back_to_home.Enabled = false;
-            if(TitlePanel.BackColor == Color.Black)
+            DisclaimerPanel.Visible = false;
+            if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
                 Back_to_home.OnHovercolor = Color.FromArgb(43, 43, 43);
@@ -815,6 +847,8 @@ namespace PHARMA_Z
             Search_desc.Visible = true;
             //Headache_panel.Visible = false;
             HeadacheDesc.Visible = false;
+            DisclaimerPanel.Visible = false;
+             
             if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
@@ -994,6 +1028,15 @@ namespace PHARMA_Z
         private void Disclaimer_Click(object sender, EventArgs e)
         {
             Back_to_home.Enabled = true;
+            HeadingLabel.Text = "Disclaimer";
+            Feedback_Panel.Visible = true;
+            Body.Visible = true;
+            Search_Panel.Visible = true;
+            DisclaimerPanel.Visible = true;
+            HomeDesc.Visible = false;
+            HeadacheDesc.Visible = false;
+            Search_desc.Visible = false;
+            FeedbackDesc.Visible = false;
             if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
@@ -1008,6 +1051,9 @@ namespace PHARMA_Z
                 Search.Textcolor = Color.Lavender;
                 About.Textcolor = Color.Lavender;
                 Feedback.Textcolor = Color.Lavender;
+                DisclaimerLabel.ForeColor = Color.Lavender;
+                DisclaimerPanel.BackColor = Color.Black;
+                DisclaimerPanelIcon.BackgroundImage = Properties.Resources.logo_title;
             }
             else
             {
@@ -1023,6 +1069,9 @@ namespace PHARMA_Z
                 Home.Textcolor = Color.FromArgb(104, 104, 104);
                 About.Textcolor = Color.FromArgb(104, 104, 104);
                 Feedback.Textcolor = Color.FromArgb(104, 104, 104);
+                DisclaimerLabel.ForeColor = Color.Black;
+                DisclaimerPanel.BackColor = Color.White;
+                DisclaimerPanelIcon.BackgroundImage = Properties.Resources.logo_title_light; 
             }
             Home_Indicator.Visible = false;
             Search_Indicator.Visible = false;
@@ -1086,7 +1135,7 @@ namespace PHARMA_Z
             Feedback_Indicator.Visible = true;
             HeadacheDesc.Visible = false;
             Search_Panel.Visible = false;
-            //Headache_panel.Visible = false;
+            HeadachePanel.Visible = false;
             FeedbackDesc.Visible = true;
             Search_desc.Visible = false;
             Feedback_Panel.Visible = true;
@@ -1213,20 +1262,12 @@ namespace PHARMA_Z
                     Search_tb.Text = "";
                 }
             }
-        private void Headache_Click(object sender, EventArgs e)
-        {
-            //Headache_panel.Visible = true;
-            Headache_Label.Visible = true;
-            HeadacheDesc.Visible = true;
-            Back_btn.Visible = true;
-            Search_desc.Visible = false;
-            FeedbackDesc.Visible = false;
-            HomeDesc.Visible = false;
-
-        }
         private void Back_btn_Click(object sender, EventArgs e)
         {
-                //Headache_panel.Visible = false;
+                Headache_Label.Visible = false;
+                HeadacheDesc.Visible = false;
+                HeadachePanel.Visible = false;
+                DisclaimerPanel.Visible = false;
                 HeadingLabel.Text = "SEARCH";
                 HeadacheDesc.Visible = false;
                 Search_desc.Visible = true;
@@ -1251,8 +1292,35 @@ namespace PHARMA_Z
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             var dtsource = _genericService.GetAllGenericMedicines();
-            SearchResult.DataSource = dtsource;
-            SearchResult.Visible = true;
+            //SearchResult.DataSource = dtsource;
+            //SearchResult.Visible = true;
+        }
+
+        private void Headache_Click(object sender, EventArgs e)
+        {
+            Feedback_Panel.Visible = true;
+            Body.Visible = true;
+            Search_Panel.Visible = true;
+            DisclaimerPanel.Visible = true;
+            HeadachePanel.Visible = true;
+            Headache_Label.Visible = true;
+            HeadacheDesc.Visible = true;
+            Search_desc.Visible = false;
+            FeedbackDesc.Visible = false;
+            HomeDesc.Visible = false;
+            Back_btn.Visible = true;
+            var dtsource = _headacheMedicineService.GetHeadacheMedicines();
+            HeadacheGrid.DataSource = dtsource;
+            //if (TitlePanel.BackColor == Color.Black)
+            //{
+            //    HeadacheGrid.BackgroundColor = Color.FromArgb(31, 31, 31);
+            //    HeadacheGrid.GridColor = Color.FromArgb(31, 31, 31);
+            //    HeadacheGrid.ForeColor = Color.Lavender;
+            //}
+            //else
+            //{
+
+            //}
         }
     }
 }
