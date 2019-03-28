@@ -3,30 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PHARMA_Z.Entities;
+using PHARMA_Z;
 using PHARMA_Z.DAL.Database;
+using PHARMA_Z.Model;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace PHARMA_Z.DAL
 {
     public class BrandService
     {
+        private int id;
         private DbClient _dbClient = null;
         public BrandService()
         {
             _dbClient = DbClient.CreateDbClient();
         }
-        public Brand GetAllBrands()
+        public int GetBrandId (string brand)
         {
-            var query = "SELECT * FROM Brand";
-            var brands = new Brand();
-            _dbClient.InvokeReader(query, sdr => {
-                brands.BrandId = int.Parse(sdr["Id"].ToString());
-                brands.BrandName = sdr["Name"].ToString();
-                brands.CompanyId = int.Parse(sdr["CompanyId"].ToString());
-                brands.GenericId = int.Parse(sdr["GenericId"].ToString());
-                brands.FormId = int.Parse(sdr["FormId"].ToString());
+            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Brand WHERE Name = '"+brand+"'", null, CommandType.Text);
+            DataTable dtBrand = _dbClient.GetDataTable(command);
+            if (dtBrand != null && dtBrand.Rows.Count > 0)
+            {
+                for (int i = 0; i < dtBrand.Rows.Count; i++)
+                {
+                    id = dtBrand.Rows[i].Field<int>("Id");
+                }
+            }
+            return id;
+        }
+        public DataTable GetAllBrands(int BrandId)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter()
+            {
+                ParameterName = "@id",
+                Value = BrandId
             });
-            return brands;
+            SqlCommand command = this._dbClient.CreateSqlCommand("GetBrand",parameters);
+            DataTable dtBrand = _dbClient.GetDataTable(command);
+            return dtBrand;
         }
     }
 }

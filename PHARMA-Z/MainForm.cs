@@ -22,12 +22,14 @@ namespace PHARMA_Z
         private SystemConfigurationService _systemConfigurationService;
         private GenericService _genericService;
         private HeadacheMedicineService _headacheMedicineService;
+        private BrandService _brandService;
         public MainForm()
         {
             InitializeComponent();
             _systemConfigurationService = new SystemConfigurationService();
             _genericService = new GenericService();
             _headacheMedicineService = new HeadacheMedicineService();
+            _brandService = new BrandService();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -1134,12 +1136,14 @@ namespace PHARMA_Z
             Disclaimer_Indicator.Visible = false;
             About_Indicator.Visible = false;
             Feedback_Indicator.Visible = true;
+            Headache_Label.Visible = false;
             HeadacheDesc.Visible = false;
-            Search_Panel.Visible = false;
             HeadachePanel.Visible = false;
+            Search_Panel.Visible = false;
             FeedbackDesc.Visible = true;
             Search_desc.Visible = false;
             Feedback_Panel.Visible = true;
+            Back_btn.Visible = false;
             if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
@@ -1312,16 +1316,15 @@ namespace PHARMA_Z
             Back_btn.Visible = true;
             var dtsource = _headacheMedicineService.GetHeadacheMedicines();
             HeadacheGrid.DataSource = dtsource;
-            //if (TitlePanel.BackColor == Color.Black)
-            //{
-            //    HeadacheGrid.BackgroundColor = Color.FromArgb(31, 31, 31);
-            //    HeadacheGrid.GridColor = Color.FromArgb(31, 31, 31);
-            //    HeadacheGrid.ForeColor = Color.Lavender;
-            //}
-            //else
-            //{
-
-            //}
+            if (TitlePanel.BackColor == Color.Black)
+            {
+                Headache_Label.ForeColor = Color.Lavender;
+                Back_btn.BackColor = Color.FromArgb(31, 31, 31);
+            }
+            else
+            {
+                Headache_Label.ForeColor = Color.FromArgb(104,104,104);
+            }
         }
     }
 }

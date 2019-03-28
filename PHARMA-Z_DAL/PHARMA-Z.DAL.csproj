@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrandService.cs" />
     <Compile Include="Database\DbClient.cs" />
     <Compile Include="Database\QueryCommand.cs" />
     <Compile Include="FeedbackService.cs" />
