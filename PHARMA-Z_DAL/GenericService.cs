@@ -13,15 +13,23 @@ namespace PHARMA_Z.DAL
         {
             _dbClient = DbClient.CreateDbClient();
         }
-        public DataTable GetAllGenericMedicines()
+        public List<string> GetGenericNames()
         {
-            SqlCommand command = this._dbClient.CreateSqlCommand("GetAllGeneric");
-            DataTable dtGeneric = _dbClient.GetDataTable(command);
-            return dtGeneric;
+            List<string> GenericList = new List<string>();
+            SqlCommand command = this._dbClient.CreateSqlCommand("GetGenericName");
+            DataTable dtBrand = _dbClient.GetDataTable(command);
+            if (dtBrand != null && dtBrand.Rows.Count > 0)
+            {
+                for (int i = 0; i < dtBrand.Rows.Count; i++)
+                {
+                    GenericList.Add(dtBrand.Rows[i].Field<string>("Name"));
+                }
+            }
+            return GenericList;
         }
         public int GetGenericId(Generic generic)
         {
-            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Brand WHERE Name = '" + generic.Name + "'", null, CommandType.Text);
+            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Generic WHERE Name = '" + generic.Name + "'", null, CommandType.Text);
             DataTable dtBrand = _dbClient.GetDataTable(command);
             if (dtBrand != null && dtBrand.Rows.Count > 0)
             {

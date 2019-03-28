@@ -67,39 +67,39 @@ namespace PHARMA_Z.DAL.Database
                 throw;
             }
         }
-        public void InvokeReader(string query, Action<SqlDataReader> resultHandler)
-        {
-            try
-            {
-            var command = this.CreateSqlCommand(query);
-            command.Connection.Open();
-            using (var reader = command.ExecuteReader())
-            {
-                resultHandler(reader);
-                command.Connection.Close();
-            }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public void InvokeUpdate(string query)
-        {
-            try
-            {
-            var command = this.CreateSqlCommand(query);
-            command.Connection.Open();
-            command.ExecuteNonQuery();
-            command.Connection.Close();
-            }
-            catch (Exception)
-            {
+        //public void InvokeReader(string query, Action<SqlDataReader> resultHandler)
+        //{
+        //    try
+        //    {
+        //    var command = this.CreateSqlCommand(query);
+        //    command.Connection.Open();
+        //    using (var reader = command.ExecuteReader())
+        //    {
+        //        resultHandler(reader);
+        //        command.Connection.Close();
+        //    }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
+        //public void InvokeUpdate(string query)
+        //{
+        //    try
+        //    {
+        //    var command = this.CreateSqlCommand(query);
+        //    command.Connection.Open();
+        //    command.ExecuteNonQuery();
+        //    command.Connection.Close();
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
+        //        throw;
+        //    }
             
-        }
+        //}
         public DataTable GetDataTable(SqlCommand command)
         {
             try

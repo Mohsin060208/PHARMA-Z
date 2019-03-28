@@ -18,6 +18,20 @@ namespace PHARMA_Z.DAL
         {
             _dbClient = DbClient.CreateDbClient();
         }
+        public List<string> GetBrandNames()
+        {
+            List<string> Brandslist = new List<string>();
+            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Name FROM Brand", null, CommandType.Text);
+            DataTable dtBrand = _dbClient.GetDataTable(command);
+            if (dtBrand != null && dtBrand.Rows.Count > 0)
+            {
+                for (int i = 0; i < dtBrand.Rows.Count; i++)
+                {
+                    Brandslist.Add(dtBrand.Rows[i].Field<string>("Name"));
+                }
+            }
+            return Brandslist;
+        }
         public int GetBrandId (Brand brand)
         {
             SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Brand WHERE Name = '"+brand.BrandName+"'", null, CommandType.Text);

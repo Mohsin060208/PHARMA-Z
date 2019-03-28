@@ -19,6 +19,7 @@ namespace PHARMA_Z
 {
     public partial class MainForm : Form
     {
+        private AutoCompleteStringCollection _coll = new AutoCompleteStringCollection();
         private SystemConfigurationService _systemConfigurationService;
         private GenericService _genericService;
         private HeadacheMedicineService _headacheMedicineService;
@@ -30,6 +31,7 @@ namespace PHARMA_Z
             _genericService = new GenericService();
             _headacheMedicineService = new HeadacheMedicineService();
             _brandService = new BrandService();
+            AutoComplete();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -1352,20 +1354,16 @@ namespace PHARMA_Z
             Environment.Exit(0);
         }
 
-        private void Generic_Click(object sender, EventArgs e)
-        {
-            Search_tb.Text = "Search for Generic Medicine";
-        }
+        //private void Generic_Click(object sender, EventArgs e)
+        //{
+        //    Search_tb.Text = "Search for Generic Medicine";
+        //}
 
-        private void Brand_Click(object sender, EventArgs e)
-        {
-            Search_tb.Text = "Search for Brand";
-        }
+        //private void Brand_Click(object sender, EventArgs e)
+        //{
+        //    Search_tb.Text = "Search for Brand";
+        //}
 
-        void AutoComplete()
-        {
-            
-        }
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             
@@ -1406,6 +1404,24 @@ namespace PHARMA_Z
                 Back_btn.Iconimage = Properties.Resources.Back_Light;
                 Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
             }
+        }
+        void AutoComplete()
+        {
+            Search_tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            Search_tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            if (Brand.Checked == true)
+            {
+                _coll.AddRange(_brandService.GetBrandNames().ToArray());
+            }
+            else if (Generic.Checked == true)
+            {
+                _coll.AddRange(_genericService.GetGenericNames().ToArray());
+            }
+        }
+        private void Search_tb_TextChanged(object sender, EventArgs e)
+        {
+           
+            Search_tb.AutoCompleteCustomSource = _coll;            
         }
     }
 }
