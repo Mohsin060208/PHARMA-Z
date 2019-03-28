@@ -34,7 +34,7 @@ namespace PHARMA_Z.DAL
         }
         public int GetBrandId (Brand brand)
         {
-            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Brand WHERE Name = '"+brand.BrandName+"'", null, CommandType.Text);
+            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Brand WHERE Name = '" + brand.BrandName + "'", null, CommandType.Text);
             DataTable dtBrand = _dbClient.GetDataTable(command);
             if (dtBrand != null && dtBrand.Rows.Count > 0)
             {
@@ -43,9 +43,13 @@ namespace PHARMA_Z.DAL
                     brand.BrandId = dtBrand.Rows[i].Field<int>("Id");
                 }
             }
+            else
+            {
+                brand.BrandId = 0;
+            }
             return brand.BrandId;
         }
-        public DataTable GetAllBrands(int BrandId)
+        public DataTable GetBrand (int BrandId)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter()

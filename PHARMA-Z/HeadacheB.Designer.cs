@@ -28,47 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.HeadachePanel = new System.Windows.Forms.Panel();
-            this.HeadacheGrid = new System.Windows.Forms.DataGridView();
-            this.HeadachePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HeadacheGrid)).BeginInit();
+            this.SearchResultPanel = new System.Windows.Forms.Panel();
+            this.SearchResultGrid = new System.Windows.Forms.DataGridView();
+            this.SearchResultPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchResultGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // HeadachePanel
+            // SearchResultPanel
             // 
-            this.HeadachePanel.Controls.Add(this.HeadacheGrid);
-            this.HeadachePanel.Location = new System.Drawing.Point(24, 26);
-            this.HeadachePanel.Name = "HeadachePanel";
-            this.HeadachePanel.Size = new System.Drawing.Size(988, 513);
-            this.HeadachePanel.TabIndex = 77;
+            this.SearchResultPanel.Controls.Add(this.SearchResultGrid);
+            this.SearchResultPanel.Location = new System.Drawing.Point(39, 40);
+            this.SearchResultPanel.Name = "SearchResultPanel";
+            this.SearchResultPanel.Size = new System.Drawing.Size(988, 513);
+            this.SearchResultPanel.TabIndex = 79;
             // 
-            // HeadacheGrid
+            // SearchResultGrid
             // 
-            this.HeadacheGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.HeadacheGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HeadacheGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HeadacheGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.HeadacheGrid.Location = new System.Drawing.Point(0, 0);
-            this.HeadacheGrid.Name = "HeadacheGrid";
-            this.HeadacheGrid.Size = new System.Drawing.Size(988, 513);
-            this.HeadacheGrid.TabIndex = 0;
+            this.SearchResultGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.SearchResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SearchResultGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.SearchResultGrid.Location = new System.Drawing.Point(0, 0);
+            this.SearchResultGrid.Name = "SearchResultGrid";
+            this.SearchResultGrid.Size = new System.Drawing.Size(988, 513);
+            this.SearchResultGrid.TabIndex = 0;
             // 
             // HeadacheB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.HeadachePanel);
+            this.Controls.Add(this.SearchResultPanel);
             this.Name = "HeadacheB";
             this.Size = new System.Drawing.Size(1030, 542);
-            this.HeadachePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.HeadacheGrid)).EndInit();
+            this.SearchResultPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchResultGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel HeadachePanel;
-        private System.Windows.Forms.DataGridView HeadacheGrid;
+        private System.Windows.Forms.Panel SearchResultPanel;
+        private System.Windows.Forms.DataGridView SearchResultGrid;
     }
 }

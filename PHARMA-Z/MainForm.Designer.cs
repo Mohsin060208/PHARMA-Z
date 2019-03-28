@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            AnimatorNS.Animation animation12 = new AnimatorNS.Animation();
-            AnimatorNS.Animation animation11 = new AnimatorNS.Animation();
-            AnimatorNS.Animation animation10 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation13 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            AnimatorNS.Animation animation14 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation15 = new AnimatorNS.Animation();
             this.Home_Indicator = new System.Windows.Forms.PictureBox();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.Back_to_home = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -69,18 +69,14 @@
             this.ThemeToggle = new System.Windows.Forms.Label();
             this.FeedbackDesc = new System.Windows.Forms.Label();
             this.HomeDesc = new System.Windows.Forms.Label();
-            this.Headache_Label = new System.Windows.Forms.Label();
+            this.SearchResult_Label = new System.Windows.Forms.Label();
             this.HeadingLabel = new System.Windows.Forms.Label();
             this.Content = new System.Windows.Forms.Panel();
             this.Body = new System.Windows.Forms.Panel();
             this.Feedback_Panel = new System.Windows.Forms.Panel();
-            this.Search_Panel = new System.Windows.Forms.Panel();
             this.DisclaimerPanel = new System.Windows.Forms.Panel();
             this.AboutPanel = new System.Windows.Forms.Panel();
-            this.AboutPanelIcon = new System.Windows.Forms.Panel();
-            this.AboutLabel = new System.Windows.Forms.Label();
-            this.DisclaimerPanelIcon = new System.Windows.Forms.Panel();
-            this.DisclaimerLabel = new System.Windows.Forms.Label();
+            this.Search_Panel = new System.Windows.Forms.Panel();
             this.Search_tb = new System.Windows.Forms.TextBox();
             this.Generic = new System.Windows.Forms.RadioButton();
             this.Brand = new System.Windows.Forms.RadioButton();
@@ -90,6 +86,10 @@
             this.Flu = new Bunifu.Framework.UI.BunifuTileButton();
             this.Cough = new Bunifu.Framework.UI.BunifuTileButton();
             this.SearchBtn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.AboutPanelIcon = new System.Windows.Forms.Panel();
+            this.AboutLabel = new System.Windows.Forms.Label();
+            this.DisclaimerPanelIcon = new System.Windows.Forms.Panel();
+            this.DisclaimerLabel = new System.Windows.Forms.Label();
             this.Email_tb = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.ClientName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.Send = new Bunifu.Framework.UI.BunifuTileButton();
@@ -118,6 +118,8 @@
             this.Cough_Elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.MainFormElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Search_Elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.SearchResultPanel = new System.Windows.Forms.Panel();
+            this.SearchResultGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Indicator)).BeginInit();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuBtn)).BeginInit();
@@ -136,12 +138,14 @@
             this.Content.SuspendLayout();
             this.Body.SuspendLayout();
             this.Feedback_Panel.SuspendLayout();
-            this.Search_Panel.SuspendLayout();
             this.DisclaimerPanel.SuspendLayout();
             this.AboutPanel.SuspendLayout();
+            this.Search_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.Bottom_Panel.SuspendLayout();
             this.DateTime_Panel.SuspendLayout();
+            this.SearchResultPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchResultGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // Home_Indicator
@@ -817,7 +821,7 @@
             this.Heading.Controls.Add(this.ThemeTogglePanel);
             this.Heading.Controls.Add(this.FeedbackDesc);
             this.Heading.Controls.Add(this.HomeDesc);
-            this.Heading.Controls.Add(this.Headache_Label);
+            this.Heading.Controls.Add(this.SearchResult_Label);
             this.Heading.Controls.Add(this.HeadingLabel);
             this.PanelAnimator.SetDecoration(this.Heading, AnimatorNS.DecorationType.None);
             this.SidebarTitleAnimator.SetDecoration(this.Heading, AnimatorNS.DecorationType.None);
@@ -875,10 +879,9 @@
             this.HeadacheDesc.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeadacheDesc.Location = new System.Drawing.Point(52, 44);
             this.HeadacheDesc.Name = "HeadacheDesc";
-            this.HeadacheDesc.Size = new System.Drawing.Size(667, 38);
+            this.HeadacheDesc.Size = new System.Drawing.Size(548, 19);
             this.HeadacheDesc.TabIndex = 52;
-            this.HeadacheDesc.Text = "Here you can find drugs that can be used to cure headache and Migraine problems. " +
-    "You can find here \r\nBrand Medicines as well as Generic medicines.";
+            this.HeadacheDesc.Text = "Here you can find drugs that can be used to cure headache and Migraine problems.";
             this.HeadacheDesc.Visible = false;
             // 
             // Search_desc
@@ -996,21 +999,21 @@
             this.HomeDesc.Text = "PHARMA-Z is an offline medical dictionary that enables the user to get informatio" +
     "n about several \r\ngeneric medicines and brands, dosage, indication and more...";
             // 
-            // Headache_Label
+            // SearchResult_Label
             // 
-            this.Headache_Label.AutoSize = true;
-            this.Headache_Label.BackColor = System.Drawing.Color.Transparent;
-            this.Menu_Expand_Animator.SetDecoration(this.Headache_Label, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.Headache_Label, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.Headache_Label, AnimatorNS.DecorationType.None);
-            this.Headache_Label.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Headache_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(104)))), ((int)(((byte)(104)))));
-            this.Headache_Label.Location = new System.Drawing.Point(46, 7);
-            this.Headache_Label.Name = "Headache_Label";
-            this.Headache_Label.Size = new System.Drawing.Size(147, 36);
-            this.Headache_Label.TabIndex = 45;
-            this.Headache_Label.Text = "HEADACHE";
-            this.Headache_Label.Visible = false;
+            this.SearchResult_Label.AutoSize = true;
+            this.SearchResult_Label.BackColor = System.Drawing.Color.Transparent;
+            this.Menu_Expand_Animator.SetDecoration(this.SearchResult_Label, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.SearchResult_Label, AnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.SearchResult_Label, AnimatorNS.DecorationType.None);
+            this.SearchResult_Label.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchResult_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(104)))), ((int)(((byte)(104)))));
+            this.SearchResult_Label.Location = new System.Drawing.Point(46, 7);
+            this.SearchResult_Label.Name = "SearchResult_Label";
+            this.SearchResult_Label.Size = new System.Drawing.Size(147, 36);
+            this.SearchResult_Label.TabIndex = 45;
+            this.SearchResult_Label.Text = "HEADACHE";
+            this.SearchResult_Label.Visible = false;
             // 
             // HeadingLabel
             // 
@@ -1063,7 +1066,7 @@
             // Feedback_Panel
             // 
             this.Feedback_Panel.BackColor = System.Drawing.Color.White;
-            this.Feedback_Panel.Controls.Add(this.Search_Panel);
+            this.Feedback_Panel.Controls.Add(this.DisclaimerPanel);
             this.Feedback_Panel.Controls.Add(this.Email_tb);
             this.Feedback_Panel.Controls.Add(this.ClientName);
             this.Feedback_Panel.Controls.Add(this.Send);
@@ -1082,9 +1085,37 @@
             this.Feedback_Panel.TabIndex = 94;
             this.Feedback_Panel.Visible = false;
             // 
+            // DisclaimerPanel
+            // 
+            this.DisclaimerPanel.Controls.Add(this.AboutPanel);
+            this.DisclaimerPanel.Controls.Add(this.DisclaimerPanelIcon);
+            this.DisclaimerPanel.Controls.Add(this.DisclaimerLabel);
+            this.PanelAnimator.SetDecoration(this.DisclaimerPanel, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.DisclaimerPanel, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.DisclaimerPanel, AnimatorNS.DecorationType.None);
+            this.DisclaimerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DisclaimerPanel.Location = new System.Drawing.Point(0, 0);
+            this.DisclaimerPanel.Name = "DisclaimerPanel";
+            this.DisclaimerPanel.Size = new System.Drawing.Size(988, 513);
+            this.DisclaimerPanel.TabIndex = 83;
+            // 
+            // AboutPanel
+            // 
+            this.AboutPanel.Controls.Add(this.Search_Panel);
+            this.AboutPanel.Controls.Add(this.AboutPanelIcon);
+            this.AboutPanel.Controls.Add(this.AboutLabel);
+            this.PanelAnimator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
+            this.AboutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AboutPanel.Location = new System.Drawing.Point(0, 0);
+            this.AboutPanel.Name = "AboutPanel";
+            this.AboutPanel.Size = new System.Drawing.Size(988, 513);
+            this.AboutPanel.TabIndex = 82;
+            // 
             // Search_Panel
             // 
-            this.Search_Panel.Controls.Add(this.DisclaimerPanel);
+            this.Search_Panel.Controls.Add(this.SearchResultPanel);
             this.Search_Panel.Controls.Add(this.Search_tb);
             this.Search_Panel.Controls.Add(this.Generic);
             this.Search_Panel.Controls.Add(this.Brand);
@@ -1101,87 +1132,8 @@
             this.Search_Panel.Location = new System.Drawing.Point(0, 0);
             this.Search_Panel.Name = "Search_Panel";
             this.Search_Panel.Size = new System.Drawing.Size(988, 513);
-            this.Search_Panel.TabIndex = 84;
+            this.Search_Panel.TabIndex = 86;
             this.Search_Panel.Visible = false;
-            // 
-            // DisclaimerPanel
-            // 
-            this.DisclaimerPanel.Controls.Add(this.AboutPanel);
-            this.DisclaimerPanel.Controls.Add(this.DisclaimerPanelIcon);
-            this.DisclaimerPanel.Controls.Add(this.DisclaimerLabel);
-            this.PanelAnimator.SetDecoration(this.DisclaimerPanel, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.DisclaimerPanel, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.DisclaimerPanel, AnimatorNS.DecorationType.None);
-            this.DisclaimerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DisclaimerPanel.Location = new System.Drawing.Point(0, 0);
-            this.DisclaimerPanel.Name = "DisclaimerPanel";
-            this.DisclaimerPanel.Size = new System.Drawing.Size(988, 513);
-            this.DisclaimerPanel.TabIndex = 81;
-            // 
-            // AboutPanel
-            // 
-            this.AboutPanel.Controls.Add(this.AboutPanelIcon);
-            this.AboutPanel.Controls.Add(this.AboutLabel);
-            this.PanelAnimator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
-            this.AboutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AboutPanel.Location = new System.Drawing.Point(0, 0);
-            this.AboutPanel.Name = "AboutPanel";
-            this.AboutPanel.Size = new System.Drawing.Size(988, 513);
-            this.AboutPanel.TabIndex = 82;
-            // 
-            // AboutPanelIcon
-            // 
-            this.AboutPanelIcon.BackColor = System.Drawing.Color.Transparent;
-            this.AboutPanelIcon.BackgroundImage = global::PHARMA_Z.Properties.Resources.logo_title_light;
-            this.AboutPanelIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PanelAnimator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
-            this.AboutPanelIcon.Location = new System.Drawing.Point(880, 380);
-            this.AboutPanelIcon.Name = "AboutPanelIcon";
-            this.AboutPanelIcon.Size = new System.Drawing.Size(96, 54);
-            this.AboutPanelIcon.TabIndex = 75;
-            // 
-            // AboutLabel
-            // 
-            this.AboutLabel.AutoSize = true;
-            this.Menu_Expand_Animator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
-            this.AboutLabel.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AboutLabel.Location = new System.Drawing.Point(19, 48);
-            this.AboutLabel.Name = "AboutLabel";
-            this.AboutLabel.Size = new System.Drawing.Size(884, 232);
-            this.AboutLabel.TabIndex = 0;
-            this.AboutLabel.Text = resources.GetString("AboutLabel.Text");
-            // 
-            // DisclaimerPanelIcon
-            // 
-            this.DisclaimerPanelIcon.BackColor = System.Drawing.Color.Transparent;
-            this.DisclaimerPanelIcon.BackgroundImage = global::PHARMA_Z.Properties.Resources.logo_title_light;
-            this.DisclaimerPanelIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PanelAnimator.SetDecoration(this.DisclaimerPanelIcon, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.DisclaimerPanelIcon, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.DisclaimerPanelIcon, AnimatorNS.DecorationType.None);
-            this.DisclaimerPanelIcon.Location = new System.Drawing.Point(880, 380);
-            this.DisclaimerPanelIcon.Name = "DisclaimerPanelIcon";
-            this.DisclaimerPanelIcon.Size = new System.Drawing.Size(96, 54);
-            this.DisclaimerPanelIcon.TabIndex = 75;
-            // 
-            // DisclaimerLabel
-            // 
-            this.DisclaimerLabel.AutoSize = true;
-            this.Menu_Expand_Animator.SetDecoration(this.DisclaimerLabel, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.DisclaimerLabel, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.DisclaimerLabel, AnimatorNS.DecorationType.None);
-            this.DisclaimerLabel.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DisclaimerLabel.Location = new System.Drawing.Point(8, 49);
-            this.DisclaimerLabel.Name = "DisclaimerLabel";
-            this.DisclaimerLabel.Size = new System.Drawing.Size(977, 261);
-            this.DisclaimerLabel.TabIndex = 0;
-            this.DisclaimerLabel.Text = resources.GetString("DisclaimerLabel.Text");
             // 
             // Search_tb
             // 
@@ -1197,7 +1149,6 @@
             this.Search_tb.Name = "Search_tb";
             this.Search_tb.Size = new System.Drawing.Size(576, 33);
             this.Search_tb.TabIndex = 78;
-            this.Search_tb.Click += new System.EventHandler(this.Search_tb_Click);
             this.Search_tb.TextChanged += new System.EventHandler(this.Search_tb_TextChanged);
             // 
             // Generic
@@ -1289,7 +1240,6 @@
             this.Headache.Name = "Headache";
             this.Headache.Size = new System.Drawing.Size(148, 136);
             this.Headache.TabIndex = 73;
-            this.Headache.Click += new System.EventHandler(this.Headache_Click);
             // 
             // Flu
             // 
@@ -1354,6 +1304,59 @@
             this.SearchBtn.TabIndex = 72;
             this.SearchBtn.TabStop = false;
             this.SearchBtn.Zoom = 5;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // AboutPanelIcon
+            // 
+            this.AboutPanelIcon.BackColor = System.Drawing.Color.Transparent;
+            this.AboutPanelIcon.BackgroundImage = global::PHARMA_Z.Properties.Resources.logo_title_light;
+            this.AboutPanelIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PanelAnimator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
+            this.AboutPanelIcon.Location = new System.Drawing.Point(880, 380);
+            this.AboutPanelIcon.Name = "AboutPanelIcon";
+            this.AboutPanelIcon.Size = new System.Drawing.Size(96, 54);
+            this.AboutPanelIcon.TabIndex = 75;
+            // 
+            // AboutLabel
+            // 
+            this.AboutLabel.AutoSize = true;
+            this.Menu_Expand_Animator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
+            this.AboutLabel.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutLabel.Location = new System.Drawing.Point(19, 48);
+            this.AboutLabel.Name = "AboutLabel";
+            this.AboutLabel.Size = new System.Drawing.Size(884, 232);
+            this.AboutLabel.TabIndex = 0;
+            this.AboutLabel.Text = resources.GetString("AboutLabel.Text");
+            // 
+            // DisclaimerPanelIcon
+            // 
+            this.DisclaimerPanelIcon.BackColor = System.Drawing.Color.Transparent;
+            this.DisclaimerPanelIcon.BackgroundImage = global::PHARMA_Z.Properties.Resources.logo_title_light;
+            this.DisclaimerPanelIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PanelAnimator.SetDecoration(this.DisclaimerPanelIcon, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.DisclaimerPanelIcon, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.DisclaimerPanelIcon, AnimatorNS.DecorationType.None);
+            this.DisclaimerPanelIcon.Location = new System.Drawing.Point(880, 380);
+            this.DisclaimerPanelIcon.Name = "DisclaimerPanelIcon";
+            this.DisclaimerPanelIcon.Size = new System.Drawing.Size(96, 54);
+            this.DisclaimerPanelIcon.TabIndex = 75;
+            // 
+            // DisclaimerLabel
+            // 
+            this.DisclaimerLabel.AutoSize = true;
+            this.Menu_Expand_Animator.SetDecoration(this.DisclaimerLabel, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.DisclaimerLabel, AnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.DisclaimerLabel, AnimatorNS.DecorationType.None);
+            this.DisclaimerLabel.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisclaimerLabel.Location = new System.Drawing.Point(8, 49);
+            this.DisclaimerLabel.Name = "DisclaimerLabel";
+            this.DisclaimerLabel.Size = new System.Drawing.Size(977, 261);
+            this.DisclaimerLabel.TabIndex = 0;
+            this.DisclaimerLabel.Text = resources.GetString("DisclaimerLabel.Text");
             // 
             // Email_tb
             // 
@@ -1714,64 +1717,64 @@
             // 
             this.PanelAnimator.AnimationType = AnimatorNS.AnimationType.HorizSlide;
             this.PanelAnimator.Cursor = null;
-            animation12.AnimateOnlyDifferences = true;
-            animation12.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.BlindCoeff")));
-            animation12.LeafCoeff = 0F;
-            animation12.MaxTime = 1F;
-            animation12.MinTime = 0F;
-            animation12.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicCoeff")));
-            animation12.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicShift")));
-            animation12.MosaicSize = 0;
-            animation12.Padding = new System.Windows.Forms.Padding(0);
-            animation12.RotateCoeff = 0F;
-            animation12.RotateLimit = 0F;
-            animation12.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.ScaleCoeff")));
-            animation12.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.SlideCoeff")));
-            animation12.TimeCoeff = 0F;
-            animation12.TransparencyCoeff = 0F;
-            this.PanelAnimator.DefaultAnimation = animation12;
+            animation13.AnimateOnlyDifferences = true;
+            animation13.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.BlindCoeff")));
+            animation13.LeafCoeff = 0F;
+            animation13.MaxTime = 1F;
+            animation13.MinTime = 0F;
+            animation13.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.MosaicCoeff")));
+            animation13.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation13.MosaicShift")));
+            animation13.MosaicSize = 0;
+            animation13.Padding = new System.Windows.Forms.Padding(0);
+            animation13.RotateCoeff = 0F;
+            animation13.RotateLimit = 0F;
+            animation13.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.ScaleCoeff")));
+            animation13.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.SlideCoeff")));
+            animation13.TimeCoeff = 0F;
+            animation13.TransparencyCoeff = 0F;
+            this.PanelAnimator.DefaultAnimation = animation13;
             // 
             // SidebarTitleAnimator
             // 
             this.SidebarTitleAnimator.AnimationType = AnimatorNS.AnimationType.Scale;
             this.SidebarTitleAnimator.Cursor = null;
-            animation11.AnimateOnlyDifferences = true;
-            animation11.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.BlindCoeff")));
-            animation11.LeafCoeff = 0F;
-            animation11.MaxTime = 1F;
-            animation11.MinTime = 0F;
-            animation11.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicCoeff")));
-            animation11.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicShift")));
-            animation11.MosaicSize = 0;
-            animation11.Padding = new System.Windows.Forms.Padding(0);
-            animation11.RotateCoeff = 0F;
-            animation11.RotateLimit = 0F;
-            animation11.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.ScaleCoeff")));
-            animation11.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.SlideCoeff")));
-            animation11.TimeCoeff = 0F;
-            animation11.TransparencyCoeff = 0F;
-            this.SidebarTitleAnimator.DefaultAnimation = animation11;
+            animation14.AnimateOnlyDifferences = true;
+            animation14.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.BlindCoeff")));
+            animation14.LeafCoeff = 0F;
+            animation14.MaxTime = 1F;
+            animation14.MinTime = 0F;
+            animation14.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.MosaicCoeff")));
+            animation14.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation14.MosaicShift")));
+            animation14.MosaicSize = 0;
+            animation14.Padding = new System.Windows.Forms.Padding(0);
+            animation14.RotateCoeff = 0F;
+            animation14.RotateLimit = 0F;
+            animation14.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.ScaleCoeff")));
+            animation14.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.SlideCoeff")));
+            animation14.TimeCoeff = 0F;
+            animation14.TransparencyCoeff = 0F;
+            this.SidebarTitleAnimator.DefaultAnimation = animation14;
             // 
             // Menu_Expand_Animator
             // 
             this.Menu_Expand_Animator.AnimationType = AnimatorNS.AnimationType.Transparent;
             this.Menu_Expand_Animator.Cursor = null;
-            animation10.AnimateOnlyDifferences = true;
-            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
-            animation10.LeafCoeff = 0F;
-            animation10.MaxTime = 1F;
-            animation10.MinTime = 0F;
-            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
-            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
-            animation10.MosaicSize = 0;
-            animation10.Padding = new System.Windows.Forms.Padding(0);
-            animation10.RotateCoeff = 0F;
-            animation10.RotateLimit = 0F;
-            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
-            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
-            animation10.TimeCoeff = 0F;
-            animation10.TransparencyCoeff = 1F;
-            this.Menu_Expand_Animator.DefaultAnimation = animation10;
+            animation15.AnimateOnlyDifferences = true;
+            animation15.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.BlindCoeff")));
+            animation15.LeafCoeff = 0F;
+            animation15.MaxTime = 1F;
+            animation15.MinTime = 0F;
+            animation15.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.MosaicCoeff")));
+            animation15.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation15.MosaicShift")));
+            animation15.MosaicSize = 0;
+            animation15.Padding = new System.Windows.Forms.Padding(0);
+            animation15.RotateCoeff = 0F;
+            animation15.RotateLimit = 0F;
+            animation15.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.ScaleCoeff")));
+            animation15.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.SlideCoeff")));
+            animation15.TimeCoeff = 0F;
+            animation15.TransparencyCoeff = 1F;
+            this.Menu_Expand_Animator.DefaultAnimation = animation15;
             // 
             // FeverElipse
             // 
@@ -1801,7 +1804,33 @@
             // Search_Elipse
             // 
             this.Search_Elipse.ElipseRadius = 30;
-            this.Search_Elipse.TargetControl = this.SearchBtn;
+            this.Search_Elipse.TargetControl = this.Search;
+            // 
+            // SearchResultPanel
+            // 
+            this.SearchResultPanel.Controls.Add(this.SearchResultGrid);
+            this.PanelAnimator.SetDecoration(this.SearchResultPanel, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.SearchResultPanel, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.SearchResultPanel, AnimatorNS.DecorationType.None);
+            this.SearchResultPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SearchResultPanel.Location = new System.Drawing.Point(0, 0);
+            this.SearchResultPanel.Name = "SearchResultPanel";
+            this.SearchResultPanel.Size = new System.Drawing.Size(988, 513);
+            this.SearchResultPanel.TabIndex = 80;
+            this.SearchResultPanel.Visible = false;
+            // 
+            // SearchResultGrid
+            // 
+            this.SearchResultGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.SearchResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SidebarTitleAnimator.SetDecoration(this.SearchResultGrid, AnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.SearchResultGrid, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.SearchResultGrid, AnimatorNS.DecorationType.None);
+            this.SearchResultGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.SearchResultGrid.Location = new System.Drawing.Point(0, 0);
+            this.SearchResultGrid.Name = "SearchResultGrid";
+            this.SearchResultGrid.Size = new System.Drawing.Size(988, 513);
+            this.SearchResultGrid.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -1846,16 +1875,18 @@
             this.Body.ResumeLayout(false);
             this.Feedback_Panel.ResumeLayout(false);
             this.Feedback_Panel.PerformLayout();
-            this.Search_Panel.ResumeLayout(false);
-            this.Search_Panel.PerformLayout();
             this.DisclaimerPanel.ResumeLayout(false);
             this.DisclaimerPanel.PerformLayout();
             this.AboutPanel.ResumeLayout(false);
             this.AboutPanel.PerformLayout();
+            this.Search_Panel.ResumeLayout(false);
+            this.Search_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.Bottom_Panel.ResumeLayout(false);
             this.DateTime_Panel.ResumeLayout(false);
             this.DateTime_Panel.PerformLayout();
+            this.SearchResultPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchResultGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1929,7 +1960,13 @@
         private Bunifu.Framework.UI.BunifuElipse Search_Elipse;
         private Bunifu.Framework.UI.BunifuFlatButton Back_to_home;
         private Bunifu.Framework.UI.BunifuFlatButton Back_btn;
-        private System.Windows.Forms.Label Headache_Label;
+        private System.Windows.Forms.Label SearchResult_Label;
+        private System.Windows.Forms.Panel DisclaimerPanel;
+        private System.Windows.Forms.Panel AboutPanel;
+        private System.Windows.Forms.Panel AboutPanelIcon;
+        private System.Windows.Forms.Label AboutLabel;
+        private System.Windows.Forms.Panel DisclaimerPanelIcon;
+        private System.Windows.Forms.Label DisclaimerLabel;
         private System.Windows.Forms.Panel Search_Panel;
         private System.Windows.Forms.TextBox Search_tb;
         private System.Windows.Forms.RadioButton Generic;
@@ -1940,11 +1977,7 @@
         private Bunifu.Framework.UI.BunifuTileButton Flu;
         private Bunifu.Framework.UI.BunifuTileButton Cough;
         private Bunifu.Framework.UI.BunifuImageButton SearchBtn;
-        private System.Windows.Forms.Panel DisclaimerPanel;
-        private System.Windows.Forms.Panel DisclaimerPanelIcon;
-        private System.Windows.Forms.Label DisclaimerLabel;
-        private System.Windows.Forms.Panel AboutPanel;
-        private System.Windows.Forms.Panel AboutPanelIcon;
-        private System.Windows.Forms.Label AboutLabel;
+        private System.Windows.Forms.Panel SearchResultPanel;
+        private System.Windows.Forms.DataGridView SearchResultGrid;
     }
 }

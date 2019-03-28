@@ -46,9 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrandService.cs" />
+    <Compile Include="CoughMedicineService.cs" />
     <Compile Include="Database\DbClient.cs" />
     <Compile Include="Database\QueryCommand.cs" />
     <Compile Include="FeedbackService.cs" />
+    <Compile Include="FeverMedicineService.cs" />
+    <Compile Include="FluMedicineService.cs" />
     <Compile Include="GenericService.cs" />
     <Compile Include="HeadacheMedicineService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

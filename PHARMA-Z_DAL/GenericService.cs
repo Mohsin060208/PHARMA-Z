@@ -38,17 +38,21 @@ namespace PHARMA_Z.DAL
                     generic.Id = dtBrand.Rows[i].Field<int>("Id");
                 }
             }
+            else
+            {
+                generic.Id = 0;
+            }
             return generic.Id;
         }
-        public DataTable GetAllBrands(int BrandId)
+        public DataTable GetGeneric (int GenericId)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter()
             {
                 ParameterName = "@id",
-                Value = BrandId
+                Value = GenericId
             });
-            SqlCommand command = this._dbClient.CreateSqlCommand("GetBrand", parameters);
+            SqlCommand command = this._dbClient.CreateSqlCommand("GetGenericMedicine", parameters);
             DataTable dtBrand = _dbClient.GetDataTable(command);
             return dtBrand;
         }

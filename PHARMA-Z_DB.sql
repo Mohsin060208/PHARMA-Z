@@ -11,7 +11,7 @@ Target Server Type    : SQL Server
 Target Server Version : 110000
 File Encoding         : 65001
 
-Date: 2019-03-27 18:32:32
+Date: 2019-03-29 01:13:15
 */
 
 
@@ -24,19 +24,15 @@ CREATE TABLE [dbo].[Brand] (
 [Id] int NOT NULL IDENTITY(1,1) ,
 [Name] varchar(50) NOT NULL ,
 [CompanyId] int NULL ,
-[Uses] varchar(50) NULL ,
-[Precautions] varchar(50) NULL ,
-[Side_Effects] varchar(50) NULL ,
-[Overview] varchar(50) NULL ,
 [Meta] varchar(50) NULL ,
 [IsFavorite] bit NULL ,
 [IsRecent] bit NULL ,
-[FormsId] bit NULL 
+[FormsId] int NULL 
 )
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[Brand]', RESEED, 56)
+DBCC CHECKIDENT(N'[dbo].[Brand]', RESEED, 63)
 GO
 
 -- ----------------------------
@@ -44,172 +40,40 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[Brand] ON
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'1', N'Disprin', N'1', null, null, null, null, N'Headache', null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'2', N'Ponstan', N'2', N'Headache', null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'2', N'Ponstan', N'2', null, null, null, null, null, null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'3', N'Panadol', N'3', N'Fever', null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'3', N'Panadol', N'3', null, null, null, null, N'Fever', null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'4', N'Brufen', N'3', N'Headache', null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'4', N'Brufen', N'3', null, null, null, null, N'Fever', null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'5', N'Disprol', N'1', N'Fever', null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'5', N'Disprol', N'1', null, null, null, null, N'Fever', null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'6', N'Disprin CV', N'1', N'Headache', null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'6', N'Disprin CV', N'1', null, null, null, null, N'Headache', null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'7', N'Nims', N'4', N'Fever', null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'7', N'Nims', N'4', null, null, null, null, N'Fever', null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'57', N'Danzen', N'7', null, null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'8', N'Nuberol', N'5', null, null, null, null, null, null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'58', N'Ponstan Forte', N'2', N'Headache', null, null, N'1')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'9', N'Nuberol Forte', N'5', null, null, null, null, null, null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'60', N'Ponstan (Suspension)', N'2', N'Fever', null, null, N'5')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'10', N'Septran', N'6', null, null, null, null, null, null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'61', N'Brufen Gel', N'3', null, null, null, N'4')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'11', N'Septran DS', N'6', null, null, null, null, null, null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'62', N'Brufen DS', N'3', N'Headache', null, null, N'5')
 GO
 GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'12', N'Danzen', N'7', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'13', N'Neurobion', N'8', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'14', N'Methycobal', N'9', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'15', N'Cac-1000', N'10', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'16', N'Qalsan-D', N'10', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'17', N'Osnate-800', N'11', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'18', N'Surbex-Z', N'3', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'19', N'Surbex-T', N'3', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'20', N'Dayalets', N'3', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'21', N'Cecon', N'3', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'22', N'Klint', N'4', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'23', N'Buscopin', N'8', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'24', N'Buscopan-Plus', N'8', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'25', N'Velosef', N'6', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'26', N'Velora', N'12', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'27', N'Azit', N'13', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'28', N'Azithro', N'1001', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'29', N'Augmentin', N'6', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'30', N'Augmentin-BD', N'6', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'31', N'Mucain', N'2', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'32', N'Tixylix Linctus', N'1002', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'33', N'Polybion', N'8', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'34', N'Polybion-Z', N'8', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'35', N'Polybion-Forte', N'8', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'36', N'Polybion-N', N'8', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'37', N'Polyfax', N'6', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'38', N'Polyfax-Plus', N'6', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'39', N'Acefyl', N'1003', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'40', N'Acicon', N'1004', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'41', N'Domel', N'1004', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'42', N'Motilium', N'1005', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'43', N'Motilium-V', N'1005', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'44', N'Dyclo', N'1006', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'45', N'Dyclo-GR', N'1006', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'46', N'Dicloran', N'4', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'47', N'Dicloran-SR', N'4', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'48', N'Novidat', N'4', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'49', N'Febrol', N'1004', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'50', N'Febrol-Extra', N'1004', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'51', N'Rigix', N'11', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'52', N'Esso', N'1008', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'53', N'Eskem', N'1009', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'54', N'Risek', N'1010', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'55', N'Diagesic', N'1011', null, null, null, null, null, null, null, null)
-GO
-GO
-INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Uses], [Precautions], [Side_Effects], [Overview], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'56', N'Acetaminophen', null, null, null, null, null, null, null, null, null)
+INSERT INTO [dbo].[Brand] ([Id], [Name], [CompanyId], [Meta], [IsFavorite], [IsRecent], [FormsId]) VALUES (N'63', N'Brufen (Suspension)', N'3', N'Fever', null, null, N'5')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[Brand] OFF
@@ -361,16 +225,37 @@ GO
 DROP TABLE [dbo].[Forms]
 GO
 CREATE TABLE [dbo].[Forms] (
-[Id] int NOT NULL ,
-[Medicine_Form] varchar(255) NULL 
+[Id] int NOT NULL IDENTITY(1,1) ,
+[Medicine_Form] varchar(255) NOT NULL 
 )
 
 
+GO
+DBCC CHECKIDENT(N'[dbo].[Forms]', RESEED, 5)
 GO
 
 -- ----------------------------
 -- Records of Forms
 -- ----------------------------
+SET IDENTITY_INSERT [dbo].[Forms] ON
+GO
+INSERT INTO [dbo].[Forms] ([Id], [Medicine_Form]) VALUES (N'1', N'Tablet')
+GO
+GO
+INSERT INTO [dbo].[Forms] ([Id], [Medicine_Form]) VALUES (N'2', N'Injection')
+GO
+GO
+INSERT INTO [dbo].[Forms] ([Id], [Medicine_Form]) VALUES (N'3', N'Capsule')
+GO
+GO
+INSERT INTO [dbo].[Forms] ([Id], [Medicine_Form]) VALUES (N'4', N'Gel')
+GO
+GO
+INSERT INTO [dbo].[Forms] ([Id], [Medicine_Form]) VALUES (N'5', N'Syrup')
+GO
+GO
+SET IDENTITY_INSERT [dbo].[Forms] OFF
+GO
 
 -- ----------------------------
 -- Table structure for Generic
@@ -383,12 +268,14 @@ CREATE TABLE [dbo].[Generic] (
 [Overview] varchar(50) NULL ,
 [BrandId] int NULL ,
 [Gramage] varchar(255) NULL ,
-[IsRecent] bit NULL 
+[IsRecent] bit NULL ,
+[Indications] varchar(255) NULL ,
+[Side_Effects] varchar(255) NULL 
 )
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[Generic]', RESEED, 20)
+DBCC CHECKIDENT(N'[dbo].[Generic]', RESEED, 26)
 GO
 
 -- ----------------------------
@@ -396,61 +283,40 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[Generic] ON
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'2', N'Sulphamethoxazole', null, N'11', N'800mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'6', N'nimesulide', N'Nimesulide is NSAID (non steroidal anti-inflammato', N'7', N'100mg', null, N'Nimesulide is primarily indicated in conditons like Bursitis, Fever , fever  Gynecological infections, inflammation , Osteoarthritis, Pain.', N'The severe or irreversible adverse effects of Nimsulide, which give rise to further complications includeStevens jhonson syndrome, lyells syndrome, hepatoxity.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'3', N'Sulphamethoxazole', null, N'10', N'400mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'7', N'aspirin', N'Aspirin is an NSAID (non-steroidal anti-inflammato', N'6', N'100mg', null, N'Aspirin is primarily indicates in condition like Fever, Following coronary bypass surgery, Headache inflammation, Ischaemic event , Mild to moderate pain. ', N'The severe or irreversible adverse effect of Apirin, which give rise to further complications include Utricaria, Gi bleeding, Rhinitis , Angioneurotic edema, Hepatitis, Hepatomegaly.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'4', N'Orphenadrine', null, N'9', N'50mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'8', N'paracetamol', N'Paracetamol is analgesic and antipyretic agent . P', N'5', N'500mg', null, N'Paracetamol is primarily indicated in conditions like ear pain , fever , headache, migraine, mild to moderate pain.', N'The severe or irreversible adverse effect of Paracetamol, which give rise to further complications include Bronchospasm.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'5', N'Orphenadrine', null, N'8', N'35mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'10', N'paracetamol', N'Paracetamol is analgesic and antipyretic agent . P', N'3', N'500mg', null, N'Paracetamol is primarily indicated in conditions like ear pain , fever , headache, migraine, mild to moderate pain.', N'The severe or irreversible adverse effect of Paracetamol, which give rise to further complications include Bronchospasm.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'6', N'Nimesulide', null, N'7', N'100mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'11', N'mefenamic acid', N'Mefenamic Acid is a NSAID (non steroidal antiinfla', N'2', N'50mg/5mlx', null, N'Mefenamic Acid is primarily indicated in condition like Dysmenorrhoea, Fever, fever inflammation, juvenile chronic arthritis, Menorrhagia, Migraine, Musculoskeletal  disorder, osteoarthritis . Pain , post oprative pain , post-partum pain , Rheumatoid Arth', N'The severe or Irreversible adverse effect of Mefenamic Acid, which give rise to further complication include diarrhoea, peripheral edema, Urticaria, Gi bleeding , Gl bleeding, proteinuria, Aplastic anemia, Epidermal necrolysis, jaundice , Nephrotic syndro')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'7', N'Aspirin', null, N'6', N'100mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'17', N'ibuprofen', N'Ibuprofen is a non-steroidal analgesic , antipyret', N'4', N'200mg/400mg/600mg', null, N'Ibuprofen is primarily indicated in conditions like cystic fibrosis, Fever , Juvenile chronic arthritis, Migraine , mild to moderate pain. ', N'The severe or irreversible adverse effect of  Ibuprofen, which give rise to further complications include Thrombocytopenia, Elevated blood pressure.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'8', N'Paracetamol', null, N'5', N'500mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'21', N'mefenamic acid', N'Mefenamic Acid is a NSAID (non steroidal antiinfla', N'58', N'500mg', null, N'Mefenamic Acid is primarily indicated in condition like Dysmenorrhoea, Fever, fever inflammation, juvenile chronic arthritis, Menorrhagia, Migraine, Musculoskeletal  disorder, osteoarthritis . Pain , post oprative pain , post-partum pain , Rheumatoid Arth', N'The severe or Irreversible adverse effect of Mefenamic Acid, which give rise to further complication include diarrhoea, peripheral edema, Urticaria, Gi bleeding , Gl bleeding, proteinuria, Aplastic anemia, Epidermal necrolysis, jaundice , Nephrotic syndro')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'9', N'Ibuprofen ', null, N'4', N'200mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'22', N'mefenamic acid', N'Mefenamic Acid is a NSAID (non steroidal antiinfla', N'60', N'50mg/ml', null, N'Mefenamic Acid is primarily indicated in condition like Dysmenorrhoea, Fever, fever inflammation, juvenile chronic arthritis, Menorrhagia, Migraine, Musculoskeletal  disorder, osteoarthritis . Pain , post oprative pain , post-partum pain , Rheumatoid Arth', N'The severe or Irreversible adverse effect of Mefenamic Acid, which give rise to further complication include diarrhoea, peripheral edema, Urticaria, Gi bleeding , Gl bleeding, proteinuria, Aplastic anemia, Epidermal necrolysis, jaundice , Nephrotic syndro')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'10', N'Paracetamol', null, N'3', N'500mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'23', N'ibuprofen', N'Ibuprofen is a non-steroidal analgesic , antipyret', N'61', N'10% W/W', null, N'Ibuprofen is primarily indicated in conditions like cystic fibrosis, Fever , Juvenile chronic arthritis, Migraine , mild to moderate pain. ', N'The severe or irreversible adverse effect of  Ibuprofen, which give rise to further complications include Thrombocytopenia, Elevated blood pressure.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'11', N'Mefenamic Acid', null, N'2', N'50mg/5mlx', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'24', N'ibuprofen', N'Ibuprofen is a non-steroidal analgesic , antipyret', N'63', N'100mg / 5ml', null, N'Ibuprofen is primarily indicated in conditions like cystic fibrosis, Fever , Juvenile chronic arthritis, Migraine , mild to moderate pain. ', N'The severe or irreversible adverse effect of  Ibuprofen, which give rise to further complications include Thrombocytopenia, Elevated blood pressure.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'12', N'Aspirin ', null, N'1', N'300mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'25', N'ibuprofen', N'Ibuprofen is a non-steroidal analgesic , antipyret', N'62', N'200mg', null, N'Ibuprofen is primarily indicated in conditions like cystic fibrosis, Fever , Juvenile chronic arthritis, Migraine , mild to moderate pain. ', N'The severe or irreversible adverse effect of  Ibuprofen, which give rise to further complications include Thrombocytopenia, Elevated blood pressure.')
 GO
 GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'13', N'trimethoprime', null, N'11', N'160mg', null)
-GO
-GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'14', N'trimethoprime', null, N'10', N' 80mg', null)
-GO
-GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'15', N' paracetamol', null, N'9', N' 650mg', null)
-GO
-GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'16', N'paracetamol', null, N'8', N'450mg', null)
-GO
-GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'17', N'Ibuprofen', null, N'4', N'600mg', null)
-GO
-GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'18', N'Ibuprofen', null, N'4', N'400mg', null)
-GO
-GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'19', N'calcium carbonate', null, N'1', N'90mg', null)
-GO
-GO
-INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent]) VALUES (N'20', N'citric acid', null, N'1', N'30mg', null)
+INSERT INTO [dbo].[Generic] ([Id], [Name], [Overview], [BrandId], [Gramage], [IsRecent], [Indications], [Side_Effects]) VALUES (N'26', N'serratiopeptidase', N'Serratiopeptidase used in inflammation and edema.', N'57', N'5mg / 10mg', null, N'Serratiopeptidase is primarily indicated in condition like Haematoma, inflammation,  Musculoskeletal disorders, Oedema, Osteoarthritis. ', N'Serratiopeptidase is primarily indicated in condition like Haematoma, inflammation,  Musculoskeletal disorders, Oedema, Osteoarthritis. ')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[Generic] OFF
@@ -477,13 +343,71 @@ GO
 GO
 
 -- ----------------------------
--- Procedure structure for GetAllGeneric
+-- Procedure structure for GetAllCoughMedicines
 -- ----------------------------
-DROP PROCEDURE [dbo].[GetAllGeneric]
+DROP PROCEDURE [dbo].[GetAllCoughMedicines]
 GO
-CREATE PROCEDURE [dbo].[GetAllGeneric]
+CREATE PROCEDURE [dbo].[GetAllCoughMedicines]
 AS
-	SELECT * from Generic
+	SELECT
+dbo.Brand.Name,
+dbo.Company.Name as Company,
+dbo.Brand.Overview,
+dbo.Brand.Uses,
+dbo.Brand.Precautions,
+dbo.Brand.Side_Effects
+FROM
+dbo.Brand
+INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+WHERE
+dbo.Brand.Meta = 'Cough'
+
+RETURN 0
+GO
+
+-- ----------------------------
+-- Procedure structure for GetAllFeverMedicines
+-- ----------------------------
+DROP PROCEDURE [dbo].[GetAllFeverMedicines]
+GO
+CREATE PROCEDURE [dbo].[GetAllFeverMedicines]
+AS
+	SELECT
+dbo.Brand.Name,
+dbo.Company.Name as Company,
+dbo.Brand.Overview,
+dbo.Brand.Uses,
+dbo.Brand.Precautions,
+dbo.Brand.Side_Effects
+FROM
+dbo.Brand
+INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+WHERE
+dbo.Brand.Meta = 'Fever'
+
+RETURN 0
+GO
+
+-- ----------------------------
+-- Procedure structure for GetAllFluMedicines
+-- ----------------------------
+DROP PROCEDURE [dbo].[GetAllFluMedicines]
+GO
+CREATE PROCEDURE [dbo].[GetAllFluMedicines]
+AS
+	SELECT
+dbo.Brand.Name,
+dbo.Company.Name as Company,
+dbo.Brand.Overview,
+dbo.Brand.Uses,
+dbo.Brand.Precautions,
+dbo.Brand.Side_Effects
+FROM
+dbo.Brand
+INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+WHERE
+dbo.Brand.Meta = 'Flu'
+
 RETURN 0
 GO
 
@@ -508,6 +432,95 @@ WHERE
 dbo.Brand.Meta = 'Headache'
 
 RETURN 0
+GO
+
+-- ----------------------------
+-- Procedure structure for GetBrand
+-- ----------------------------
+DROP PROCEDURE [dbo].[GetBrand]
+GO
+CREATE PROCEDURE [dbo].[GetBrand]
+	@id int
+AS
+
+SELECT
+dbo.Brand.Name AS Brand,
+dbo.Company.Name AS Company,
+dbo.Generic.Name As Composition,
+dbo.Generic.Gramage,
+dbo.Forms.Medicine_Form
+
+FROM
+dbo.Brand
+INNER JOIN dbo.Generic ON dbo.Generic.BrandId = dbo.Brand.Id
+INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+INNER JOIN dbo.Forms ON dbo.Brand.FormsId = dbo.Forms.Id
+
+WHERE Brand.Id = @id
+
+RETURN 0
+GO
+
+-- ----------------------------
+-- Procedure structure for GetBrandName
+-- ----------------------------
+DROP PROCEDURE [dbo].[GetBrandName]
+GO
+CREATE PROCEDURE [dbo].[GetBrandName]
+	-- @Param1 varchar(30), @Param2 int
+AS
+BEGIN
+SELECT
+dbo.Brand.Name
+
+FROM
+dbo.Brand
+
+END
+
+GO
+
+-- ----------------------------
+-- Procedure structure for GetGenericMedicine
+-- ----------------------------
+DROP PROCEDURE [dbo].[GetGenericMedicine]
+GO
+CREATE PROCEDURE [dbo].[GetGenericMedicine]
+@id int	
+AS
+
+SELECT DISTINCT
+dbo.Generic.Name,
+dbo.Generic.Overview,
+dbo.Generic.Indications,
+dbo.Generic.Side_Effects
+
+FROM
+dbo.Generic
+
+
+WHERE dbo.Generic.Id = @id
+
+return 0;
+GO
+
+-- ----------------------------
+-- Procedure structure for GetGenericName
+-- ----------------------------
+DROP PROCEDURE [dbo].[GetGenericName]
+GO
+CREATE PROCEDURE [dbo].[GetGenericName]
+	-- @Param1 varchar(30), @Param2 int
+AS
+BEGIN
+	SELECT DISTINCT
+dbo.Generic.Name
+
+FROM
+dbo.Generic
+
+END
+
 GO
 
 -- ----------------------------
@@ -566,6 +579,9 @@ GO
 -- ----------------------------
 CREATE INDEX [IX_Brand_Company] ON [dbo].[Brand]
 ([CompanyId] ASC) 
+GO
+CREATE INDEX [IX_Brand_Forms] ON [dbo].[Brand]
+([FormsId] ASC) 
 GO
 
 -- ----------------------------
@@ -626,11 +642,13 @@ GO
 -- ----------------------------
 ALTER TABLE [dbo].[Brand] ADD FOREIGN KEY ([CompanyId]) REFERENCES [dbo].[Company] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
 GO
+ALTER TABLE [dbo].[Brand] ADD FOREIGN KEY ([FormsId]) REFERENCES [dbo].[Forms] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+GO
 
 -- ----------------------------
 -- Foreign Key structure for table [dbo].[Dosages]
 -- ----------------------------
-ALTER TABLE [dbo].[Dosages] ADD FOREIGN KEY ([BrandId]) REFERENCES [dbo].[Generic] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+ALTER TABLE [dbo].[Dosages] ADD FOREIGN KEY ([BrandId]) REFERENCES [dbo].[Brand] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
 -- ----------------------------

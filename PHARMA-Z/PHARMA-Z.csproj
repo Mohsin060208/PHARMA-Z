@@ -69,6 +69,12 @@
     <Compile Include="Disclaimer.Designer.cs">
       <DependentUpon>Disclaimer.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisclaimerAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisclaimerAbout.Designer.cs">
+      <DependentUpon>DisclaimerAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalConfiguration.cs" />
     <Compile Include="HeadacheB.cs">
       <SubType>UserControl</SubType>
@@ -97,6 +103,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Disclaimer.resx">
       <DependentUpon>Disclaimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisclaimerAbout.resx">
+      <DependentUpon>DisclaimerAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeadacheB.resx">
       <DependentUpon>HeadacheB.cs</DependentUpon>
