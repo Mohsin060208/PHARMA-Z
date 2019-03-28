@@ -11,7 +11,7 @@ Target Server Type    : SQL Server
 Target Server Version : 110000
 File Encoding         : 65001
 
-Date: 2019-03-29 01:13:15
+Date: 2019-03-29 04:50:33
 */
 
 
@@ -338,7 +338,7 @@ GO
 -- ----------------------------
 -- Records of System_Configuration
 -- ----------------------------
-INSERT INTO [dbo].[System_Configuration] ([Theme_Toggle], [Disclaimer_Check]) VALUES (N'0', N'1')
+INSERT INTO [dbo].[System_Configuration] ([Theme_Toggle], [Disclaimer_Check]) VALUES (N'1', N'1')
 GO
 GO
 
@@ -350,15 +350,17 @@ GO
 CREATE PROCEDURE [dbo].[GetAllCoughMedicines]
 AS
 	SELECT
-dbo.Brand.Name,
+dbo.Brand.Name as Brand,
 dbo.Company.Name as Company,
-dbo.Brand.Overview,
-dbo.Brand.Uses,
-dbo.Brand.Precautions,
-dbo.Brand.Side_Effects
+dbo.Forms.Medicine_Form,
+dbo.Generic.Name as Composition,
+dbo.Generic.Gramage
+
 FROM
 dbo.Brand
 INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+INNER JOIN dbo.Forms ON dbo.Brand.FormsId = dbo.Forms.Id
+INNER JOIN dbo.Generic ON dbo.Generic.BrandId = dbo.Brand.Id
 WHERE
 dbo.Brand.Meta = 'Cough'
 
@@ -373,15 +375,17 @@ GO
 CREATE PROCEDURE [dbo].[GetAllFeverMedicines]
 AS
 	SELECT
-dbo.Brand.Name,
+dbo.Brand.Name as Brand,
 dbo.Company.Name as Company,
-dbo.Brand.Overview,
-dbo.Brand.Uses,
-dbo.Brand.Precautions,
-dbo.Brand.Side_Effects
+dbo.Forms.Medicine_Form,
+dbo.Generic.Name as Composition,
+dbo.Generic.Gramage
+
 FROM
 dbo.Brand
 INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+INNER JOIN dbo.Forms ON dbo.Brand.FormsId = dbo.Forms.Id
+INNER JOIN dbo.Generic ON dbo.Generic.BrandId = dbo.Brand.Id
 WHERE
 dbo.Brand.Meta = 'Fever'
 
@@ -396,15 +400,17 @@ GO
 CREATE PROCEDURE [dbo].[GetAllFluMedicines]
 AS
 	SELECT
-dbo.Brand.Name,
+dbo.Brand.Name as Brand,
 dbo.Company.Name as Company,
-dbo.Brand.Overview,
-dbo.Brand.Uses,
-dbo.Brand.Precautions,
-dbo.Brand.Side_Effects
+dbo.Forms.Medicine_Form,
+dbo.Generic.Name as Composition,
+dbo.Generic.Gramage
+
 FROM
 dbo.Brand
 INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+INNER JOIN dbo.Forms ON dbo.Brand.FormsId = dbo.Forms.Id
+INNER JOIN dbo.Generic ON dbo.Generic.BrandId = dbo.Brand.Id
 WHERE
 dbo.Brand.Meta = 'Flu'
 
@@ -419,15 +425,17 @@ GO
 CREATE PROCEDURE [dbo].[GetAllHeadacheMedicines]
 AS
 	SELECT
-dbo.Brand.Name,
+dbo.Brand.Name as Brand,
 dbo.Company.Name as Company,
-dbo.Brand.Overview,
-dbo.Brand.Uses,
-dbo.Brand.Precautions,
-dbo.Brand.Side_Effects
+dbo.Forms.Medicine_Form,
+dbo.Generic.Name as Composition,
+dbo.Generic.Gramage
+
 FROM
 dbo.Brand
 INNER JOIN dbo.Company ON dbo.Brand.CompanyId = dbo.Company.Id
+INNER JOIN dbo.Forms ON dbo.Brand.FormsId = dbo.Forms.Id
+INNER JOIN dbo.Generic ON dbo.Generic.BrandId = dbo.Brand.Id
 WHERE
 dbo.Brand.Meta = 'Headache'
 
