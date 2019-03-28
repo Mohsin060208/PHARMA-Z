@@ -11,7 +11,7 @@ using System.Data;
 
 namespace PHARMA_Z.DAL
 {
-    class FeverMedicineService
+    public class FeverMedicineService
     {
         private DbClient _dbClient = null;
         public FeverMedicineService()

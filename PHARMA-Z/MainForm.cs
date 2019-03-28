@@ -25,6 +25,9 @@ namespace PHARMA_Z
         private GenericService _genericService;
         private Brand _brand;
         private HeadacheMedicineService _headacheMedicineService;
+        private FeverMedicineService _feverMedicineService;
+        private CoughMedicineService _coughMedicineService;
+        private FluMedicineService _fluMedicineService;
         private BrandService _brandService;
         public MainForm()
         {
@@ -33,6 +36,9 @@ namespace PHARMA_Z
             _generic = new Model.Generic();
             _genericService = new GenericService();
             _headacheMedicineService = new HeadacheMedicineService();
+            _feverMedicineService = new FeverMedicineService();
+            _coughMedicineService = new CoughMedicineService();
+            _fluMedicineService = new FluMedicineService();
             _brand = new Model.Brand();
             _brandService = new BrandService();
             AutoComplete();
@@ -1462,11 +1468,6 @@ namespace PHARMA_Z
 
         private void Headache_Click(object sender, EventArgs e)
         {
-            Body.Visible = true;
-            Feedback_Panel.Visible = true;
-            Search_Panel.Visible = true;
-            DisclaimerPanel.Visible = true;
-            AboutPanel.Visible = true;
             SearchResultPanel.Visible = true;
             SearchResult_Label.Visible = true;
             SearchResultDesc.Visible = true;
@@ -1478,7 +1479,9 @@ namespace PHARMA_Z
             SearchResultGrid.DataSource = dtsource;
             if (TitlePanel.BackColor == Color.Black)
             {
+                SearchResult_Label.Text = "HEADACHE";
                 SearchResult_Label.ForeColor = Color.Lavender;
+                SearchResultDesc.Text = "Here you can find drugs that can be used to cure headache and Migraine problems.";
                 SearchResultDesc.ForeColor = Color.Lavender;
                 Back_btn.Normalcolor = Color.Black;
                 Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
@@ -1513,6 +1516,111 @@ namespace PHARMA_Z
                 _coll.AddRange(_genericService.GetGenericNames().ToArray());
             }
             Search_tb.AutoCompleteCustomSource = _coll;
+        }
+
+        private void Fever_Click(object sender, EventArgs e)
+        {
+            SearchResultPanel.Visible = true;
+            SearchResult_Label.Visible = true;
+            SearchResultDesc.Visible = true;
+            Search_desc.Visible = false;
+            FeedbackDesc.Visible = false;
+            HomeDesc.Visible = false;
+            Back_btn.Visible = true;
+            var dtsource = _feverMedicineService.GetFeverMedicines();
+            SearchResultGrid.DataSource = dtsource;
+            if (TitlePanel.BackColor == Color.Black)
+            {
+                SearchResult_Label.Text = "FEVER";
+                SearchResult_Label.ForeColor = Color.Lavender;
+                SearchResultDesc.Text = "Here you can find drugs that can be used to cure Fever.";
+                SearchResultDesc.ForeColor = Color.Lavender;
+                Back_btn.Normalcolor = Color.Black;
+                Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
+                Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
+                Back_btn.DisabledColor = Color.Black;
+                Back_btn.Iconimage = Properties.Resources.Back_Dark;
+            }
+            else
+            {
+                SearchResult_Label.ForeColor = Color.FromArgb(104, 104, 104);
+                SearchResultDesc.ForeColor = Color.Black;
+                Back_btn.Normalcolor = Color.White;
+                Back_btn.OnHovercolor = Color.FromArgb(229, 229, 229);
+                Back_btn.Activecolor = Color.FromArgb(229, 229, 229);
+                Back_btn.Iconimage = Properties.Resources.Back_Light;
+                Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
+            }
+        }
+
+        private void Cough_Click(object sender, EventArgs e)
+        {
+            SearchResultPanel.Visible = true;
+            SearchResult_Label.Visible = true;
+            SearchResultDesc.Visible = true;
+            Search_desc.Visible = false;
+            FeedbackDesc.Visible = false;
+            HomeDesc.Visible = false;
+            Back_btn.Visible = true;
+            var dtsource = _coughMedicineService.GetCoughMedicines();
+            SearchResultGrid.DataSource = dtsource;
+            if (TitlePanel.BackColor == Color.Black)
+            {
+                SearchResult_Label.Text = "COUGH";
+                SearchResult_Label.ForeColor = Color.Lavender;
+                SearchResultDesc.Text = "Here you can find drugs that can be used to cure Cough.";
+                SearchResultDesc.ForeColor = Color.Lavender;
+                Back_btn.Normalcolor = Color.Black;
+                Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
+                Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
+                Back_btn.DisabledColor = Color.Black;
+                Back_btn.Iconimage = Properties.Resources.Back_Dark;
+            }
+            else
+            {
+                SearchResult_Label.ForeColor = Color.FromArgb(104, 104, 104);
+                SearchResultDesc.ForeColor = Color.Black;
+                Back_btn.Normalcolor = Color.White;
+                Back_btn.OnHovercolor = Color.FromArgb(229, 229, 229);
+                Back_btn.Activecolor = Color.FromArgb(229, 229, 229);
+                Back_btn.Iconimage = Properties.Resources.Back_Light;
+                Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
+            }
+        }
+
+        private void Flu_Click(object sender, EventArgs e)
+        {
+            SearchResultPanel.Visible = true;
+            SearchResult_Label.Visible = true;
+            SearchResultDesc.Visible = true;
+            Search_desc.Visible = false;
+            FeedbackDesc.Visible = false;
+            HomeDesc.Visible = false;
+            Back_btn.Visible = true;
+            var dtsource = _fluMedicineService.GetFluMedicines();
+            SearchResultGrid.DataSource = dtsource;
+            if (TitlePanel.BackColor == Color.Black)
+            {
+                SearchResult_Label.Text = "FLU";
+                SearchResult_Label.ForeColor = Color.Lavender;
+                SearchResultDesc.Text = "Here you can find drugs that can be used to cure FLU.";
+                SearchResultDesc.ForeColor = Color.Lavender;
+                Back_btn.Normalcolor = Color.Black;
+                Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
+                Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
+                Back_btn.DisabledColor = Color.Black;
+                Back_btn.Iconimage = Properties.Resources.Back_Dark;
+            }
+            else
+            {
+                SearchResult_Label.ForeColor = Color.FromArgb(104, 104, 104);
+                SearchResultDesc.ForeColor = Color.Black;
+                Back_btn.Normalcolor = Color.White;
+                Back_btn.OnHovercolor = Color.FromArgb(229, 229, 229);
+                Back_btn.Activecolor = Color.FromArgb(229, 229, 229);
+                Back_btn.Iconimage = Properties.Resources.Back_Light;
+                Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
+            }
         }
     }
 }

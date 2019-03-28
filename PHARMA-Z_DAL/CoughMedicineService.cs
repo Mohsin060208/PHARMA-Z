@@ -11,7 +11,7 @@ using System.Data;
 
 namespace PHARMA_Z.DAL
 {
-    class CoughMedicineService
+    public class CoughMedicineService
     {
         private DbClient _dbClient = null; 
         public CoughMedicineService()
