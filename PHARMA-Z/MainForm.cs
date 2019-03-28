@@ -164,7 +164,7 @@ namespace PHARMA_Z
                 HeadingLabel.Text = "PHARMA-Z";
                 FeedbackDesc.Visible = false;
                 Search_desc.Visible = false;
-                HeadacheDesc.Visible = false;
+                SearchResultDesc.Visible = false;
                 SearchResult_Label.Visible = false;
                 Back_btn.Visible = false;
             }
@@ -176,30 +176,33 @@ namespace PHARMA_Z
                     HeadingLabel.Text = "FEEDBACK";
                     FeedbackDesc.Visible = true;
                     FeedbackDesc.ForeColor = Color.Lavender;
-                    HeadacheDesc.Visible = false;
+                    SearchResultDesc.Visible = false;
                     SearchResult_Label.Visible = false;
                     Back_btn.Visible = false;
                 }
                 else if (Search_Indicator.Visible == true)
                 {
-                    HeadingLabel.Text = "SEARCH";
-                    Search_desc.Visible = true;
-                    Search_desc.ForeColor = Color.Lavender;
-                    Back_btn.Visible = false;
                     if (SearchResult_Label.Visible == true)
                     {
+                        Search_desc.Visible = false;
+                        Back_btn.Visible = true;
+                        SearchResult_Label.Visible = true;
                         SearchResult_Label.ForeColor = Color.Lavender;
-                        HeadacheDesc.Visible = true;
-                        HeadacheDesc.ForeColor = Color.Lavender;
-                        Back_btn.Normalcolor = Color.FromArgb(31, 31, 31);
-                        Back_btn.OnHovercolor = Color.FromArgb(43, 43, 43);
+                        SearchResultDesc.ForeColor = Color.Lavender;
+                        Back_btn.Normalcolor = Color.Black;
+                        Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
                         Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
-                        Back_btn.DisabledColor = Color.FromArgb(31, 31, 31);
+                        Back_btn.DisabledColor = Color.Black;
                         Back_btn.Iconimage = Properties.Resources.Back_Dark;
                     }
                     else
                     {
-                        HeadacheDesc.Visible = false;
+                        SearchResultDesc.Visible = false;
+                        HeadingLabel.Text = "SEARCH";
+                        Search_desc.Visible = true;
+                        Search_desc.ForeColor = Color.Lavender;
+                        SearchResult_Label.ForeColor = Color.Lavender;
+                        Back_btn.Visible = false;
                     }
 
                 }
@@ -207,7 +210,7 @@ namespace PHARMA_Z
                 {
                     HeadingLabel.Text = "Disclaimer";
                     Search_desc.Visible = false;
-                    HeadacheDesc.Visible = false;
+                    SearchResultDesc.Visible = false;
                     SearchResult_Label.Visible = false;
                     Back_btn.Visible = false;
                 }
@@ -215,7 +218,7 @@ namespace PHARMA_Z
                 {
                     HeadingLabel.Text = "About";
                     Search_desc.Visible = false;
-                    HeadacheDesc.Visible = false;
+                    SearchResultDesc.Visible = false;
                     SearchResult_Label.Visible = false;
                     Back_btn.Visible = false;
                 }
@@ -377,7 +380,6 @@ namespace PHARMA_Z
             {
                 Feedback_Panel.Visible = true;
                 Search_Panel.Visible = false;
-                //Headache_panel.Visible = false;
                 Feedback_Panel.BackColor = Color.Black;
                 ClientName_Label.ForeColor = Color.Lavender;
                 ClientName.BorderColorMouseHover = Color.FromArgb(0,120,215);
@@ -398,7 +400,6 @@ namespace PHARMA_Z
             {
                 Feedback_Panel.Visible = true;
                 Search_Panel.Visible = true;
-                //Headache_panel.Visible = false;
                 Search_Panel.BackColor = Color.Black;
                 Search_tb.ForeColor = Color.Lavender;
                 Search_tb.BackColor = Color.Black;
@@ -490,7 +491,7 @@ namespace PHARMA_Z
                     HomeDesc.ForeColor = Color.Black;
                     FeedbackDesc.Visible = false;
                     Search_desc.Visible = false;
-                    HeadacheDesc.Visible = false;
+                    SearchResultDesc.Visible = false;
                     SearchResult_Label.Visible = false;
                     Back_btn.Visible = false;
                 }
@@ -503,24 +504,39 @@ namespace PHARMA_Z
                         FeedbackDesc.Visible = true;
                         FeedbackDesc.ForeColor = Color.Black;
                         Search_desc.Visible = false;
-                        HeadacheDesc.Visible = false;
+                        SearchResultDesc.Visible = false;
                         SearchResult_Label.Visible = false;
                         Back_btn.Visible = false;
                     }
                     else if (Search_Indicator.Visible == true)
+                {
+                    if (SearchResult_Label.Visible == true)
                     {
+                        SearchResult_Label.ForeColor = Color.FromArgb(104, 104, 104);
+                        SearchResultDesc.Visible = true;
+                        SearchResultDesc.ForeColor = Color.Black;
+                        Back_btn.Visible = true;
+                        Back_btn.Normalcolor = Color.White;
+                        Back_btn.OnHovercolor = Color.FromArgb(229, 229, 229);
+                        Back_btn.Activecolor = Color.FromArgb(229, 229, 229);
+                        Back_btn.Iconimage = Properties.Resources.Back_Light;
+                        Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
+                    }
+                    else
+                    {
+                        SearchResult_Label.Visible = false;
+                        SearchResultDesc.Visible = false;
                         HeadingLabel.Text = "SEARCH";
                         Search_desc.Visible = true;
                         Search_desc.ForeColor = Color.Black;
-                        HeadacheDesc.Visible = false;
-                        SearchResult_Label.Visible = false;
                         Back_btn.Visible = false;
                     }
+                }
                     else if(Disclaimer_Indicator.Visible == true)
                     {
                         HeadingLabel.Text = "Disclaimer";
                         Search_desc.Visible = false;
-                        HeadacheDesc.Visible = false;
+                        SearchResultDesc.Visible = false;
                         SearchResult_Label.Visible = false;
                         Back_btn.Visible = false;
                     }
@@ -528,10 +544,11 @@ namespace PHARMA_Z
                 {
                     HeadingLabel.Text = "About";
                     Search_desc.Visible = false;
-                    HeadacheDesc.Visible = false;
+                    SearchResultDesc.Visible = false;
                     SearchResult_Label.Visible = false;
                     Back_btn.Visible = false;
                 }
+               
             }   
         }
         private void SidebarChangesLightTheme()
@@ -708,7 +725,6 @@ namespace PHARMA_Z
                 {
                     Feedback_Panel.Visible = true;
                     Search_Panel.Visible = true;
-                    //Headache_panel.Visible = false;
                     Search_Panel.BackColor = Color.White;
                     SearchBtn.Image = Properties.Resources.Search_small_light;
                     SearchBtn.BackColor = Color.FromArgb(229,229,229);
@@ -782,6 +798,9 @@ namespace PHARMA_Z
             Feedback_Panel.Visible = false;
             FeedbackDesc.Visible = false;
             Search_desc.Visible = false;
+            SearchResult_Label.Visible = false;
+            SearchResultDesc.Visible = false;
+            Back_btn.Visible = false;
             Back_to_home.Enabled = false;
             DisclaimerPanel.Visible = false;
 
@@ -904,10 +923,10 @@ namespace PHARMA_Z
             Feedback_Panel.Visible = true;
             DisclaimerPanel.Visible = true;
             AboutPanel.Visible = true;
+            SearchResultPanel.Visible = false;
             Search_Panel.Visible = true;
             Search_desc.Visible = true;
-            //Headache_panel.Visible = false;
-            HeadacheDesc.Visible = false;
+            SearchResultDesc.Visible = false;
             if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
@@ -1087,6 +1106,7 @@ namespace PHARMA_Z
         private void Disclaimer_Click(object sender, EventArgs e)
         {
             Back_to_home.Enabled = true;
+            Back_btn.Visible = false;
             HeadingLabel.Text = "Disclaimer";
             Feedback_Panel.Visible = true;
             Body.Visible = true;
@@ -1094,9 +1114,11 @@ namespace PHARMA_Z
             DisclaimerPanel.Visible = true;
             AboutPanel.Visible = false;
             HomeDesc.Visible = false;
-            HeadacheDesc.Visible = false;
+            SearchResultDesc.Visible = false;
             Search_desc.Visible = false;
             FeedbackDesc.Visible = false;
+            SearchResult_Label.Visible = false;
+            SearchResultDesc.Visible = false;
             if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
@@ -1180,7 +1202,7 @@ namespace PHARMA_Z
                 AboutPanel.BackColor = Color.White;
                 AboutPanelIcon.BackgroundImage = Properties.Resources.logo_title_light;
             }
-            Back_to_home.Enabled = true;
+            Back_btn.Visible = false;
             AboutPanel.Visible = true;
             HeadingLabel.Text = "About";
             Feedback_Panel.Visible = true;
@@ -1188,8 +1210,9 @@ namespace PHARMA_Z
             Search_Panel.Visible = false;
             DisclaimerPanel.Visible = true;
             HomeDesc.Visible = false;
-            HeadacheDesc.Visible = false;
             Search_desc.Visible = false;
+            SearchResult_Label.Visible = false;
+            SearchResultDesc.Visible = false;
             FeedbackDesc.Visible = false;
             Home_Indicator.Visible = false;
             Search_Indicator.Visible = false;
@@ -1202,6 +1225,7 @@ namespace PHARMA_Z
         private void Feedback_Click(object sender, EventArgs e)
         {
             Back_to_home.Enabled = true;
+            Back_btn.Visible = false;
             Home_Indicator.Visible = false;
             Search_Indicator.Visible = false;
             Search_Panel.Visible = false;
@@ -1211,13 +1235,11 @@ namespace PHARMA_Z
             About_Indicator.Visible = false;
             Feedback_Indicator.Visible = true;
             SearchResult_Label.Visible = false;
-            HeadacheDesc.Visible = false;
-            //HeadachePanel.Visible = false;
+            SearchResultDesc.Visible = false;
             FeedbackDesc.Visible = true;
             Search_desc.Visible = false;
             Feedback_Panel.Visible = true;
             DisclaimerPanel.Visible = false;
-            Back_btn.Visible = false;
             if (TitlePanel.BackColor == Color.Black)
             {
                 Back_to_home.Normalcolor = Color.FromArgb(31, 31, 31);
@@ -1338,7 +1360,7 @@ namespace PHARMA_Z
         {
                 SearchResultPanel.Visible = false;
                 SearchResult_Label.Visible = false;
-                HeadacheDesc.Visible = false;
+                SearchResultDesc.Visible = false;
                 Feedback_Panel.Visible = true;
                 DisclaimerPanel.Visible = true;
                 AboutPanel.Visible = true;
@@ -1349,6 +1371,14 @@ namespace PHARMA_Z
                 Search_tb.ResetText();
                 Back_btn.Visible = false;
                 HomeDesc.Visible = false;
+            if (TitlePanel.BackColor == Color.Black)
+            {
+                Search_desc.ForeColor = Color.Lavender;
+            }
+            else
+            {
+                Search_desc.ForeColor = Color.Black;
+            }
         }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -1374,7 +1404,7 @@ namespace PHARMA_Z
             AboutPanel.Visible = true;
             SearchResult_Label.Visible = true;
             SearchResult_Label.Text = "Your Search Result";
-            HeadacheDesc.Visible = false;
+            SearchResultDesc.Visible = false;
             Search_desc.Visible = false;
             FeedbackDesc.Visible = false;
             HomeDesc.Visible = false;
@@ -1437,8 +1467,9 @@ namespace PHARMA_Z
             Search_Panel.Visible = true;
             DisclaimerPanel.Visible = true;
             AboutPanel.Visible = true;
+            SearchResultPanel.Visible = true;
             SearchResult_Label.Visible = true;
-            HeadacheDesc.Visible = true;
+            SearchResultDesc.Visible = true;
             Search_desc.Visible = false;
             FeedbackDesc.Visible = false;
             HomeDesc.Visible = false;
@@ -1448,17 +1479,19 @@ namespace PHARMA_Z
             if (TitlePanel.BackColor == Color.Black)
             {
                 SearchResult_Label.ForeColor = Color.Lavender;
-                Back_btn.Normalcolor = Color.FromArgb(31, 31, 31);
-                Back_btn.OnHovercolor = Color.FromArgb(43, 43, 43);
+                SearchResultDesc.ForeColor = Color.Lavender;
+                Back_btn.Normalcolor = Color.Black;
+                Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
                 Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
-                Back_btn.DisabledColor = Color.FromArgb(31, 31, 31);
+                Back_btn.DisabledColor = Color.Black;
                 Back_btn.Iconimage = Properties.Resources.Back_Dark;
             }
             else
             {
                 SearchResult_Label.ForeColor = Color.FromArgb(104,104,104);
-                Back_btn.Normalcolor = Color.FromArgb(229, 229, 229);
-                Back_btn.OnHovercolor = Color.FromArgb(242, 242, 242);
+                SearchResultDesc.ForeColor = Color.Black;
+                Back_btn.Normalcolor = Color.White;
+                Back_btn.OnHovercolor = Color.FromArgb(229, 229, 229);
                 Back_btn.Activecolor = Color.FromArgb(229, 229, 229);
                 Back_btn.Iconimage = Properties.Resources.Back_Light;
                 Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
