@@ -14,5 +14,7 @@ namespace PHARMA_Z.Model
         public string Gramage { get; set; }
         public int BrandId { get; set; }
         public bool? IsRecent { get; set; }
+        public string Indications { get; set; }
+        public string SideEffects { get; set; }
     }
 }

@@ -70,6 +70,12 @@
       <DependentUpon>Disclaimer.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalConfiguration.cs" />
+    <Compile Include="HeadacheB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HeadacheB.Designer.cs">
+      <DependentUpon>HeadacheB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Disclaimer.resx">
       <DependentUpon>Disclaimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeadacheB.resx">
+      <DependentUpon>HeadacheB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

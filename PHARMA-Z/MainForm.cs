@@ -179,13 +179,35 @@ namespace PHARMA_Z
                     HeadingLabel.Text = "SEARCH";
                     Search_desc.Visible = true;
                     Search_desc.ForeColor = Color.Lavender;
-                    HeadacheDesc.Visible = false;
-                    Headache_Label.Visible = false;
                     Back_btn.Visible = false;
+                    if (Headache_Label.Visible == true)
+                    {
+                        Headache_Label.ForeColor = Color.Lavender;
+                        HeadacheDesc.Visible = true;
+                        HeadacheDesc.ForeColor = Color.Lavender;
+                        Back_btn.Normalcolor = Color.FromArgb(31, 31, 31);
+                        Back_btn.OnHovercolor = Color.FromArgb(43, 43, 43);
+                        Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
+                        Back_btn.DisabledColor = Color.FromArgb(31, 31, 31);
+                        Back_btn.Iconimage = Properties.Resources.Back_Dark;
+                    }
+                    else
+                    {
+                        HeadacheDesc.Visible = false;
+                    }
+
                 }
                 else if (Disclaimer_Indicator.Visible == true)
                 {
                     HeadingLabel.Text = "Disclaimer";
+                    Search_desc.Visible = false;
+                    HeadacheDesc.Visible = false;
+                    Headache_Label.Visible = false;
+                    Back_btn.Visible = false;
+                }
+                else if (About_Indicator.Visible == true)
+                {
+                    HeadingLabel.Text = "About";
                     Search_desc.Visible = false;
                     HeadacheDesc.Visible = false;
                     Headache_Label.Visible = false;
@@ -405,6 +427,12 @@ namespace PHARMA_Z
                 DisclaimerPanelIcon.BackgroundImage = Properties.Resources.logo_title;
                 DisclaimerLabel.ForeColor = Color.Lavender;
             }
+            else if (About_Indicator.Visible == true)
+            {
+                AboutPanel.BackColor = Color.Black;
+                AboutPanelIcon.BackgroundImage = Properties.Resources.logo_title;
+                AboutLabel.ForeColor = Color.Lavender;
+            }
         }
         private void BottomPanelChangesDarkTheme()
         {
@@ -446,7 +474,7 @@ namespace PHARMA_Z
                 Maximize.OnHovercolor = Color.FromArgb(242,242,242);
             }
         private void HeadingChangesLightTheme()
-            {
+        {
                 HeadingLabel.ForeColor = Color.FromArgb(104, 104, 104);
                 ThemeToggle.ForeColor = Color.FromArgb(104, 104, 104);
                 if (Home_Indicator.Visible == true)
@@ -456,6 +484,9 @@ namespace PHARMA_Z
                     HomeDesc.ForeColor = Color.Black;
                     FeedbackDesc.Visible = false;
                     Search_desc.Visible = false;
+                    HeadacheDesc.Visible = false;
+                    Headache_Label.Visible = false;
+                    Back_btn.Visible = false;
                 }
                 else
                 {
@@ -466,6 +497,9 @@ namespace PHARMA_Z
                         FeedbackDesc.Visible = true;
                         FeedbackDesc.ForeColor = Color.Black;
                         Search_desc.Visible = false;
+                        HeadacheDesc.Visible = false;
+                        Headache_Label.Visible = false;
+                        Back_btn.Visible = false;
                     }
                     else if (Search_Indicator.Visible == true)
                     {
@@ -473,6 +507,8 @@ namespace PHARMA_Z
                         Search_desc.Visible = true;
                         Search_desc.ForeColor = Color.Black;
                         HeadacheDesc.Visible = false;
+                        Headache_Label.Visible = false;
+                        Back_btn.Visible = false;
                     }
                     else if(Disclaimer_Indicator.Visible == true)
                     {
@@ -482,8 +518,16 @@ namespace PHARMA_Z
                         Headache_Label.Visible = false;
                         Back_btn.Visible = false;
                     }
+                else if (About_Indicator.Visible == true)
+                {
+                    HeadingLabel.Text = "About";
+                    Search_desc.Visible = false;
+                    HeadacheDesc.Visible = false;
+                    Headache_Label.Visible = false;
+                    Back_btn.Visible = false;
                 }
-            }
+            }   
+        }
         private void SidebarChangesLightTheme()
             {
                 Sidebar.BackColor = Color.FromArgb(229,229,229);
@@ -692,8 +736,14 @@ namespace PHARMA_Z
                     DisclaimerPanel.BackColor = Color.White;
                     DisclaimerPanelIcon.BackgroundImage = Properties.Resources.logo_title_light;
                     DisclaimerLabel.ForeColor = Color.Black;
+                }
+            else if (About_Indicator.Visible == true)
+            {
+                AboutPanel.BackColor = Color.White;
+                AboutPanelIcon.BackgroundImage = Properties.Resources.logo_title_light;
+                AboutLabel.ForeColor = Color.Black;
             }
-            }
+        }
         private void BottomPanelChangesLightTheme()
             {
                 Bottom_Panel.BackColor = Color.White;
@@ -1036,6 +1086,7 @@ namespace PHARMA_Z
             Body.Visible = true;
             Search_Panel.Visible = true;
             DisclaimerPanel.Visible = true;
+            AboutPanel.Visible = false;
             HomeDesc.Visible = false;
             HeadacheDesc.Visible = false;
             Search_desc.Visible = false;
@@ -1101,6 +1152,9 @@ namespace PHARMA_Z
                 Disclaimer.Textcolor = Color.Lavender;
                 Search.Textcolor = Color.Lavender;
                 Feedback.Textcolor = Color.Lavender;
+                AboutLabel.ForeColor = Color.Lavender;
+                AboutPanel.BackColor = Color.Black;
+                AboutPanelIcon.BackgroundImage = Properties.Resources.logo_title;
             }
             else
             {
@@ -1116,7 +1170,21 @@ namespace PHARMA_Z
                 Disclaimer.Textcolor = Color.FromArgb(104, 104, 104);
                 Home.Textcolor = Color.FromArgb(104, 104, 104);
                 Feedback.Textcolor = Color.FromArgb(104, 104, 104);
+                AboutLabel.ForeColor = Color.Black;
+                AboutPanel.BackColor = Color.White;
+                AboutPanelIcon.BackgroundImage = Properties.Resources.logo_title_light;
             }
+            Back_to_home.Enabled = true;
+            AboutPanel.Visible = true;
+            HeadingLabel.Text = "About";
+            Feedback_Panel.Visible = true;
+            Body.Visible = true;
+            Search_Panel.Visible = true;
+            DisclaimerPanel.Visible = true;
+            HomeDesc.Visible = false;
+            HeadacheDesc.Visible = false;
+            Search_desc.Visible = false;
+            FeedbackDesc.Visible = false;
             Home_Indicator.Visible = false;
             Search_Indicator.Visible = false;
             RecentIndicator.Visible = false;
@@ -1138,7 +1206,7 @@ namespace PHARMA_Z
             Feedback_Indicator.Visible = true;
             Headache_Label.Visible = false;
             HeadacheDesc.Visible = false;
-            HeadachePanel.Visible = false;
+            //HeadachePanel.Visible = false;
             Search_Panel.Visible = false;
             FeedbackDesc.Visible = true;
             Search_desc.Visible = false;
@@ -1271,7 +1339,7 @@ namespace PHARMA_Z
         {
                 Headache_Label.Visible = false;
                 HeadacheDesc.Visible = false;
-                HeadachePanel.Visible = false;
+                //HeadachePanel.Visible = false;
                 DisclaimerPanel.Visible = false;
                 HeadingLabel.Text = "SEARCH";
                 HeadacheDesc.Visible = false;
@@ -1294,9 +1362,13 @@ namespace PHARMA_Z
             Search_tb.Text = "Search for Brand";
         }
 
+        void AutoComplete()
+        {
+            
+        }
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            var dtsource = _genericService.GetAllGenericMedicines();
+            
             //SearchResult.DataSource = dtsource;
             //SearchResult.Visible = true;
         }
@@ -1307,7 +1379,7 @@ namespace PHARMA_Z
             Body.Visible = true;
             Search_Panel.Visible = true;
             DisclaimerPanel.Visible = true;
-            HeadachePanel.Visible = true;
+            //HeadachePanel.Visible = true;
             Headache_Label.Visible = true;
             HeadacheDesc.Visible = true;
             Search_desc.Visible = false;
@@ -1315,15 +1387,24 @@ namespace PHARMA_Z
             HomeDesc.Visible = false;
             Back_btn.Visible = true;
             var dtsource = _headacheMedicineService.GetHeadacheMedicines();
-            HeadacheGrid.DataSource = dtsource;
+            //HeadacheGrid.DataSource = dtsource;
             if (TitlePanel.BackColor == Color.Black)
             {
                 Headache_Label.ForeColor = Color.Lavender;
-                Back_btn.BackColor = Color.FromArgb(31, 31, 31);
+                Back_btn.Normalcolor = Color.FromArgb(31, 31, 31);
+                Back_btn.OnHovercolor = Color.FromArgb(43, 43, 43);
+                Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
+                Back_btn.DisabledColor = Color.FromArgb(31, 31, 31);
+                Back_btn.Iconimage = Properties.Resources.Back_Dark;
             }
             else
             {
                 Headache_Label.ForeColor = Color.FromArgb(104,104,104);
+                Back_btn.Normalcolor = Color.FromArgb(229, 229, 229);
+                Back_btn.OnHovercolor = Color.FromArgb(242, 242, 242);
+                Back_btn.Activecolor = Color.FromArgb(229, 229, 229);
+                Back_btn.Iconimage = Properties.Resources.Back_Light;
+                Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
             }
         }
     }

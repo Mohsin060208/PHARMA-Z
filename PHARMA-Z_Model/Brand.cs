@@ -11,8 +11,6 @@ namespace PHARMA_Z.Model
         public int BrandId { get; set; }
         public string BrandName { get; set; }
         public int CompanyId { get; set; }
-        public string Use { get; set; }
-        public string Precautions { get; set; }
         public string Meta { get; set; }
         public bool IsRecent { get; set; }
         public bool IsFavorite { get; set; }

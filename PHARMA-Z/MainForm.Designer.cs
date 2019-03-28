@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            AnimatorNS.Animation animation12 = new AnimatorNS.Animation();
-            AnimatorNS.Animation animation11 = new AnimatorNS.Animation();
-            AnimatorNS.Animation animation10 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation6 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation5 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation4 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Home_Indicator = new System.Windows.Forms.PictureBox();
             this.Sidebar = new System.Windows.Forms.Panel();
@@ -76,6 +76,9 @@
             this.Feedback_Panel = new System.Windows.Forms.Panel();
             this.Search_Panel = new System.Windows.Forms.Panel();
             this.DisclaimerPanel = new System.Windows.Forms.Panel();
+            this.AboutPanel = new System.Windows.Forms.Panel();
+            this.AboutPanelIcon = new System.Windows.Forms.Panel();
+            this.AboutLabel = new System.Windows.Forms.Label();
             this.DisclaimerPanelIcon = new System.Windows.Forms.Panel();
             this.DisclaimerLabel = new System.Windows.Forms.Label();
             this.Search_tb = new System.Windows.Forms.TextBox();
@@ -115,8 +118,6 @@
             this.Cough_Elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.MainFormElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Search_Elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.HeadachePanel = new System.Windows.Forms.Panel();
-            this.HeadacheGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Indicator)).BeginInit();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuBtn)).BeginInit();
@@ -137,11 +138,10 @@
             this.Feedback_Panel.SuspendLayout();
             this.Search_Panel.SuspendLayout();
             this.DisclaimerPanel.SuspendLayout();
+            this.AboutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.Bottom_Panel.SuspendLayout();
             this.DateTime_Panel.SuspendLayout();
-            this.HeadachePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HeadacheGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // Home_Indicator
@@ -1106,7 +1106,7 @@
             // 
             // DisclaimerPanel
             // 
-            this.DisclaimerPanel.Controls.Add(this.HeadachePanel);
+            this.DisclaimerPanel.Controls.Add(this.AboutPanel);
             this.DisclaimerPanel.Controls.Add(this.DisclaimerPanelIcon);
             this.DisclaimerPanel.Controls.Add(this.DisclaimerLabel);
             this.PanelAnimator.SetDecoration(this.DisclaimerPanel, AnimatorNS.DecorationType.None);
@@ -1117,6 +1117,45 @@
             this.DisclaimerPanel.Name = "DisclaimerPanel";
             this.DisclaimerPanel.Size = new System.Drawing.Size(988, 513);
             this.DisclaimerPanel.TabIndex = 81;
+            // 
+            // AboutPanel
+            // 
+            this.AboutPanel.Controls.Add(this.AboutPanelIcon);
+            this.AboutPanel.Controls.Add(this.AboutLabel);
+            this.PanelAnimator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.AboutPanel, AnimatorNS.DecorationType.None);
+            this.AboutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AboutPanel.Location = new System.Drawing.Point(0, 0);
+            this.AboutPanel.Name = "AboutPanel";
+            this.AboutPanel.Size = new System.Drawing.Size(988, 513);
+            this.AboutPanel.TabIndex = 82;
+            // 
+            // AboutPanelIcon
+            // 
+            this.AboutPanelIcon.BackColor = System.Drawing.Color.Transparent;
+            this.AboutPanelIcon.BackgroundImage = global::PHARMA_Z.Properties.Resources.logo_title_light;
+            this.AboutPanelIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PanelAnimator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
+            this.Menu_Expand_Animator.SetDecoration(this.AboutPanelIcon, AnimatorNS.DecorationType.None);
+            this.AboutPanelIcon.Location = new System.Drawing.Point(880, 380);
+            this.AboutPanelIcon.Name = "AboutPanelIcon";
+            this.AboutPanelIcon.Size = new System.Drawing.Size(96, 54);
+            this.AboutPanelIcon.TabIndex = 75;
+            // 
+            // AboutLabel
+            // 
+            this.AboutLabel.AutoSize = true;
+            this.Menu_Expand_Animator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
+            this.SidebarTitleAnimator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.AboutLabel, AnimatorNS.DecorationType.None);
+            this.AboutLabel.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutLabel.Location = new System.Drawing.Point(19, 48);
+            this.AboutLabel.Name = "AboutLabel";
+            this.AboutLabel.Size = new System.Drawing.Size(884, 232);
+            this.AboutLabel.TabIndex = 0;
+            this.AboutLabel.Text = resources.GetString("AboutLabel.Text");
             // 
             // DisclaimerPanelIcon
             // 
@@ -1676,64 +1715,64 @@
             // 
             this.PanelAnimator.AnimationType = AnimatorNS.AnimationType.HorizSlide;
             this.PanelAnimator.Cursor = null;
-            animation12.AnimateOnlyDifferences = true;
-            animation12.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.BlindCoeff")));
-            animation12.LeafCoeff = 0F;
-            animation12.MaxTime = 1F;
-            animation12.MinTime = 0F;
-            animation12.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicCoeff")));
-            animation12.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicShift")));
-            animation12.MosaicSize = 0;
-            animation12.Padding = new System.Windows.Forms.Padding(0);
-            animation12.RotateCoeff = 0F;
-            animation12.RotateLimit = 0F;
-            animation12.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.ScaleCoeff")));
-            animation12.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.SlideCoeff")));
-            animation12.TimeCoeff = 0F;
-            animation12.TransparencyCoeff = 0F;
-            this.PanelAnimator.DefaultAnimation = animation12;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 0;
+            animation6.Padding = new System.Windows.Forms.Padding(0);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 0F;
+            animation6.TransparencyCoeff = 0F;
+            this.PanelAnimator.DefaultAnimation = animation6;
             // 
             // SidebarTitleAnimator
             // 
             this.SidebarTitleAnimator.AnimationType = AnimatorNS.AnimationType.Scale;
             this.SidebarTitleAnimator.Cursor = null;
-            animation11.AnimateOnlyDifferences = true;
-            animation11.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.BlindCoeff")));
-            animation11.LeafCoeff = 0F;
-            animation11.MaxTime = 1F;
-            animation11.MinTime = 0F;
-            animation11.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicCoeff")));
-            animation11.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicShift")));
-            animation11.MosaicSize = 0;
-            animation11.Padding = new System.Windows.Forms.Padding(0);
-            animation11.RotateCoeff = 0F;
-            animation11.RotateLimit = 0F;
-            animation11.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.ScaleCoeff")));
-            animation11.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.SlideCoeff")));
-            animation11.TimeCoeff = 0F;
-            animation11.TransparencyCoeff = 0F;
-            this.SidebarTitleAnimator.DefaultAnimation = animation11;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.SidebarTitleAnimator.DefaultAnimation = animation5;
             // 
             // Menu_Expand_Animator
             // 
             this.Menu_Expand_Animator.AnimationType = AnimatorNS.AnimationType.Transparent;
             this.Menu_Expand_Animator.Cursor = null;
-            animation10.AnimateOnlyDifferences = true;
-            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
-            animation10.LeafCoeff = 0F;
-            animation10.MaxTime = 1F;
-            animation10.MinTime = 0F;
-            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
-            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
-            animation10.MosaicSize = 0;
-            animation10.Padding = new System.Windows.Forms.Padding(0);
-            animation10.RotateCoeff = 0F;
-            animation10.RotateLimit = 0F;
-            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
-            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
-            animation10.TimeCoeff = 0F;
-            animation10.TransparencyCoeff = 1F;
-            this.Menu_Expand_Animator.DefaultAnimation = animation10;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 1F;
+            this.Menu_Expand_Animator.DefaultAnimation = animation4;
             // 
             // FeverElipse
             // 
@@ -1764,32 +1803,6 @@
             // 
             this.Search_Elipse.ElipseRadius = 30;
             this.Search_Elipse.TargetControl = this.SearchBtn;
-            // 
-            // HeadachePanel
-            // 
-            this.HeadachePanel.Controls.Add(this.HeadacheGrid);
-            this.PanelAnimator.SetDecoration(this.HeadachePanel, AnimatorNS.DecorationType.None);
-            this.SidebarTitleAnimator.SetDecoration(this.HeadachePanel, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.HeadachePanel, AnimatorNS.DecorationType.None);
-            this.HeadachePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HeadachePanel.Location = new System.Drawing.Point(0, 0);
-            this.HeadachePanel.Name = "HeadachePanel";
-            this.HeadachePanel.Size = new System.Drawing.Size(988, 513);
-            this.HeadachePanel.TabIndex = 76;
-            // 
-            // HeadacheGrid
-            // 
-            this.HeadacheGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.HeadacheGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SidebarTitleAnimator.SetDecoration(this.HeadacheGrid, AnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.HeadacheGrid, AnimatorNS.DecorationType.None);
-            this.Menu_Expand_Animator.SetDecoration(this.HeadacheGrid, AnimatorNS.DecorationType.None);
-            this.HeadacheGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HeadacheGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.HeadacheGrid.Location = new System.Drawing.Point(0, 0);
-            this.HeadacheGrid.Name = "HeadacheGrid";
-            this.HeadacheGrid.Size = new System.Drawing.Size(988, 513);
-            this.HeadacheGrid.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -1838,12 +1851,12 @@
             this.Search_Panel.PerformLayout();
             this.DisclaimerPanel.ResumeLayout(false);
             this.DisclaimerPanel.PerformLayout();
+            this.AboutPanel.ResumeLayout(false);
+            this.AboutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.Bottom_Panel.ResumeLayout(false);
             this.DateTime_Panel.ResumeLayout(false);
             this.DateTime_Panel.PerformLayout();
-            this.HeadachePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.HeadacheGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1931,7 +1944,8 @@
         private System.Windows.Forms.Panel DisclaimerPanel;
         private System.Windows.Forms.Panel DisclaimerPanelIcon;
         private System.Windows.Forms.Label DisclaimerLabel;
-        private System.Windows.Forms.Panel HeadachePanel;
-        private System.Windows.Forms.DataGridView HeadacheGrid;
+        private System.Windows.Forms.Panel AboutPanel;
+        private System.Windows.Forms.Panel AboutPanelIcon;
+        private System.Windows.Forms.Label AboutLabel;
     }
 }

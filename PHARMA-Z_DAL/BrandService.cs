@@ -13,24 +13,23 @@ namespace PHARMA_Z.DAL
 {
     public class BrandService
     {
-        private int id;
         private DbClient _dbClient = null;
         public BrandService()
         {
             _dbClient = DbClient.CreateDbClient();
         }
-        public int GetBrandId (string brand)
+        public int GetBrandId (Brand brand)
         {
-            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Brand WHERE Name = '"+brand+"'", null, CommandType.Text);
+            SqlCommand command = this._dbClient.CreateSqlCommand("SELECT Id FROM Brand WHERE Name = '"+brand.BrandName+"'", null, CommandType.Text);
             DataTable dtBrand = _dbClient.GetDataTable(command);
             if (dtBrand != null && dtBrand.Rows.Count > 0)
             {
                 for (int i = 0; i < dtBrand.Rows.Count; i++)
                 {
-                    id = dtBrand.Rows[i].Field<int>("Id");
+                    brand.BrandId = dtBrand.Rows[i].Field<int>("Id");
                 }
             }
-            return id;
+            return brand.BrandId;
         }
         public DataTable GetAllBrands(int BrandId)
         {
