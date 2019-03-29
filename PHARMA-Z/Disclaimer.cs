@@ -27,6 +27,7 @@ namespace PHARMA_Z
             this.Hide();
             MainForm frm = new MainForm();
             frm.ShowDialog();
+            this.Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

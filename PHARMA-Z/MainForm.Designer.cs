@@ -1151,13 +1151,16 @@
             // SearchResultGrid
             // 
             this.SearchResultGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.SearchResultGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.SearchResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SidebarTitleAnimator.SetDecoration(this.SearchResultGrid, AnimatorNS.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.SearchResultGrid, AnimatorNS.DecorationType.None);
             this.Menu_Expand_Animator.SetDecoration(this.SearchResultGrid, AnimatorNS.DecorationType.None);
+            this.SearchResultGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.SearchResultGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.SearchResultGrid.Location = new System.Drawing.Point(0, 0);
             this.SearchResultGrid.Name = "SearchResultGrid";
+            this.SearchResultGrid.ReadOnly = true;
             this.SearchResultGrid.Size = new System.Drawing.Size(988, 513);
             this.SearchResultGrid.TabIndex = 0;
             // 

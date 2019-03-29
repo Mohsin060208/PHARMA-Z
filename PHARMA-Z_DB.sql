@@ -11,7 +11,7 @@ Target Server Type    : SQL Server
 Target Server Version : 110000
 File Encoding         : 65001
 
-Date: 2019-03-29 04:50:33
+Date: 2019-03-29 05:04:41
 */
 
 
@@ -338,7 +338,7 @@ GO
 -- ----------------------------
 -- Records of System_Configuration
 -- ----------------------------
-INSERT INTO [dbo].[System_Configuration] ([Theme_Toggle], [Disclaimer_Check]) VALUES (N'1', N'1')
+INSERT INTO [dbo].[System_Configuration] ([Theme_Toggle], [Disclaimer_Check]) VALUES (N'0', N'0')
 GO
 GO
 

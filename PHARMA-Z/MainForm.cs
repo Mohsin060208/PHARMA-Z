@@ -1403,30 +1403,29 @@ namespace PHARMA_Z
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            Body.Visible = true;
             Feedback_Panel.Visible = true;
             Search_Panel.Visible = true;
             DisclaimerPanel.Visible = true;
             AboutPanel.Visible = true;
-            SearchResult_Label.Visible = true;
-            SearchResult_Label.Text = "Your Search Result";
-            SearchResultDesc.Visible = false;
-            Search_desc.Visible = false;
             FeedbackDesc.Visible = false;
             HomeDesc.Visible = false;
-            Back_btn.Visible = true;
-            Search_tb.Visible = false;
             if (Generic.Checked == true)
             {
                 _generic.Name = Search_tb.Text;
                 _generic.Id = _genericService.GetGenericId(_generic);
                 if (_generic.Id == 0)
                 {
-                    MessageBox.Show("Please Check The Spellings before clicking Search");
+                    MessageBox.Show("No Records Found Try AutoComplete Search");
                 }
                 else
                 {
+                Search_tb.Visible = false;
+                Search_desc.Visible = false;
+                SearchResult_Label.Visible = true;
+                SearchResult_Label.Text = "Your Search Result";
                 SearchResultPanel.Visible = true;
+                SearchResultDesc.Visible = false;
+                Back_btn.Visible = true;
                 var dtSource = _genericService.GetGeneric(_generic.Id);
                 SearchResultGrid.DataSource = dtSource;
                 }
@@ -1437,11 +1436,17 @@ namespace PHARMA_Z
                 _brand.BrandId = _brandService.GetBrandId(_brand);
                 if (_brand.BrandId == 0)
                 {
-                    MessageBox.Show("Please Check The Spellings before clicking Search");
+                    MessageBox.Show("No Records Found Try AutoComplete Search");
                 }
                 else
                 {
+                    Search_tb.Visible = false;
+                    Search_desc.Visible = false;
+                    SearchResult_Label.Visible = true;
+                    SearchResult_Label.Text = "Your Search Result";
                     SearchResultPanel.Visible = true;
+                    SearchResultDesc.Visible = false;
+                    Back_btn.Visible = true;
                     var dtSource = _brandService.GetBrand(_brand.BrandId);
                     SearchResultGrid.DataSource = dtSource;
                 }
@@ -1449,17 +1454,17 @@ namespace PHARMA_Z
             if (TitlePanel.BackColor == Color.Black)
             {
                 SearchResult_Label.ForeColor = Color.Lavender;
-                Back_btn.Normalcolor = Color.FromArgb(31, 31, 31);
-                Back_btn.OnHovercolor = Color.FromArgb(43, 43, 43);
+                Back_btn.Normalcolor = Color.Black;
+                Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
                 Back_btn.Activecolor = Color.FromArgb(31, 31, 31);
-                Back_btn.DisabledColor = Color.FromArgb(31, 31, 31);
+                Back_btn.DisabledColor = Color.Black;
                 Back_btn.Iconimage = Properties.Resources.Back_Dark;
             }
             else
             {
                 SearchResult_Label.ForeColor = Color.FromArgb(104, 104, 104);
-                Back_btn.Normalcolor = Color.FromArgb(229, 229, 229);
-                Back_btn.OnHovercolor = Color.FromArgb(242, 242, 242);
+                Back_btn.Normalcolor = Color.White;
+                Back_btn.OnHovercolor = Color.FromArgb(229, 229, 229);
                 Back_btn.Activecolor = Color.FromArgb(229, 229, 229);
                 Back_btn.Iconimage = Properties.Resources.Back_Light;
                 Back_btn.DisabledColor = Color.FromArgb(229, 229, 229);
@@ -1468,6 +1473,7 @@ namespace PHARMA_Z
 
         private void Headache_Click(object sender, EventArgs e)
         {
+            Search_tb.Visible = false;
             SearchResultPanel.Visible = true;
             SearchResult_Label.Visible = true;
             SearchResultDesc.Visible = true;
@@ -1477,11 +1483,11 @@ namespace PHARMA_Z
             Back_btn.Visible = true;
             var dtsource = _headacheMedicineService.GetHeadacheMedicines();
             SearchResultGrid.DataSource = dtsource;
+            SearchResult_Label.Text = "HEADACHE";
+            SearchResultDesc.Text = "Here you can find drugs that can be used to cure headache and Migraine problems.";
             if (TitlePanel.BackColor == Color.Black)
             {
-                SearchResult_Label.Text = "HEADACHE";
                 SearchResult_Label.ForeColor = Color.Lavender;
-                SearchResultDesc.Text = "Here you can find drugs that can be used to cure headache and Migraine problems.";
                 SearchResultDesc.ForeColor = Color.Lavender;
                 Back_btn.Normalcolor = Color.Black;
                 Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
@@ -1520,6 +1526,7 @@ namespace PHARMA_Z
 
         private void Fever_Click(object sender, EventArgs e)
         {
+            Search_tb.Visible = false;
             SearchResultPanel.Visible = true;
             SearchResult_Label.Visible = true;
             SearchResultDesc.Visible = true;
@@ -1529,11 +1536,11 @@ namespace PHARMA_Z
             Back_btn.Visible = true;
             var dtsource = _feverMedicineService.GetFeverMedicines();
             SearchResultGrid.DataSource = dtsource;
+                SearchResult_Label.Text = "FEVER";
+                SearchResultDesc.Text = "Here you can find drugs that can be used to cure Fever.";
             if (TitlePanel.BackColor == Color.Black)
             {
-                SearchResult_Label.Text = "FEVER";
                 SearchResult_Label.ForeColor = Color.Lavender;
-                SearchResultDesc.Text = "Here you can find drugs that can be used to cure Fever.";
                 SearchResultDesc.ForeColor = Color.Lavender;
                 Back_btn.Normalcolor = Color.Black;
                 Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
@@ -1555,6 +1562,7 @@ namespace PHARMA_Z
 
         private void Cough_Click(object sender, EventArgs e)
         {
+            Search_tb.Visible = false;
             SearchResultPanel.Visible = true;
             SearchResult_Label.Visible = true;
             SearchResultDesc.Visible = true;
@@ -1564,11 +1572,11 @@ namespace PHARMA_Z
             Back_btn.Visible = true;
             var dtsource = _coughMedicineService.GetCoughMedicines();
             SearchResultGrid.DataSource = dtsource;
+                SearchResult_Label.Text = "COUGH";
+                SearchResultDesc.Text = "Here you can find drugs that can be used to cure Cough.";
             if (TitlePanel.BackColor == Color.Black)
             {
-                SearchResult_Label.Text = "COUGH";
                 SearchResult_Label.ForeColor = Color.Lavender;
-                SearchResultDesc.Text = "Here you can find drugs that can be used to cure Cough.";
                 SearchResultDesc.ForeColor = Color.Lavender;
                 Back_btn.Normalcolor = Color.Black;
                 Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
@@ -1590,6 +1598,7 @@ namespace PHARMA_Z
 
         private void Flu_Click(object sender, EventArgs e)
         {
+            Search_tb.Visible = false;
             SearchResultPanel.Visible = true;
             SearchResult_Label.Visible = true;
             SearchResultDesc.Visible = true;
@@ -1599,11 +1608,11 @@ namespace PHARMA_Z
             Back_btn.Visible = true;
             var dtsource = _fluMedicineService.GetFluMedicines();
             SearchResultGrid.DataSource = dtsource;
+                SearchResult_Label.Text = "FLU";
+                SearchResultDesc.Text = "Here you can find drugs that can be used to cure FLU.";
             if (TitlePanel.BackColor == Color.Black)
             {
-                SearchResult_Label.Text = "FLU";
                 SearchResult_Label.ForeColor = Color.Lavender;
-                SearchResultDesc.Text = "Here you can find drugs that can be used to cure FLU.";
                 SearchResultDesc.ForeColor = Color.Lavender;
                 Back_btn.Normalcolor = Color.Black;
                 Back_btn.OnHovercolor = Color.FromArgb(31, 31, 31);
